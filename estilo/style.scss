@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ############# Variables ############# */
+$Negro1: rgb(20, 20, 20);
+$Negro2: rgb(48, 48, 48);
+$Azul1: rgb(48, 0, 131);
+$Azul2: rgb(43, 64, 255);
+$Violeta1: rgb(116, 0, 129);
+$Violeta2: rgb(178, 71, 255);
+$Rosa1: #ff28ed;
+
+@font-face {
+    font-family: "Fantasy-One";
+    src: url("../letra/Fantasy-One.ttf.eot");
+    src: url("../letra/Fantasy-One.ttf.woff") format("woff"),
+}
+
+body {
+    background: linear-gradient($Negro1 0%, $Negro2 20%, $Negro1 40%, $Negro2 60%, $Negro1 80%, $Negro2 100%);
+    color: white;
+}
+
+/* ############# Encabezado ############# */
+.encabezado {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 3em;
+    background: linear-gradient($Azul1, $Azul2);
+    -webkit-background-clip: text;
+    color: transparent;
+
+    span {
+        background: linear-gradient($Violeta1, $Violeta2);
+        -webkit-background-clip: text;
+    }
+
+}
+
+/* ############# Navegador ############# */
+.navegador {
+    width: 30%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    ul {
+        list-style: none;
+        display: flex;
+        width: 100%;
+        text-align: center;
+
+        li {
+
+            font-size: 2em;
+            width: 100%;
+
+            span {
+                background: linear-gradient($Violeta1, $Violeta2);
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+
+            a {
+                text-decoration: none;
+                background: linear-gradient($Azul1, $Azul2);
+                -webkit-background-clip: text;
+                color: transparent;
+
+                &:hover {
+                    color: $Rosa1;
+                }
+            }
+        }
+    }
+}
+
+/* ############# Index Contenido Principal ############# */
+main {
+    min-height: 80vh;
+}
+
+.InformacionPrincipal {
+    text-align: center;
+    font-family: "Fantasy-One";
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+}
+
+/* ############# Index Seccion Formulario Busqueda ############# */
+.formulario {
+    padding-top: 40px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    font-family: "Fantasy-One";
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5em;
+
+
+    input,
+    select {
+        width: 186px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+}
+
+/* ############# Index Seccion Series ############# */
+.contenedorSeries {
+    width: 90%;
+    padding: 0px 4%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.anime {
+    margin-top: 20px;
+    width: 192px;
+    height: 320px;
+    border-radius: 15px;
+}
+
+.hideAnime {
+    display: none;
+}
+
+.displayAnime {
+    display: initial;
+}
+
+.linkAnime {
+    width: 100%;
+    height: 100%;
+}
+
+.animeContenedor {
+    width: 100%;
+    height: 90%;
+    padding-top: 5px;
+    border-radius: 15px;
+    background: linear-gradient(225deg, #0b3cbf 0%, #ff4000 50%, #DED700 100%);
+}
+
+.imagenAnime {
+    width: 98%;
+    height: 96%;
+    margin: auto;
+    margin-top: 3px;
+    border-radius: 15px;
+
+    background-size: cover;
+    background-position: bottom;
+}
+
+@for $i from 1 through 10 {
+    .imagenAnime#{$i} {
+        background-image: url(../imagenes/anime#{$i}.jpg);
+    }
+}
+
+.tituloAnime {
+    width: 100%;
+    padding: 6%;
+    border-radius: 2px 2px 15px 15px;
+    margin: auto;
+    margin-top: -20px;
+    display: block;
+    background: linear-gradient(#eee, #333);
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    border-width: 0px;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+        background: linear-gradient(rgb(223, 223, 223), rgb(118, 118, 118));
+        color: orangered;
+    } 
+
+    &:active {
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.54);
+        background: linear-gradient(rgb(211, 211, 211), rgb(66, 66, 66));
+        color: orange;
+    }
+}
+
+/* ############# Pie de Pagina ############# */
+
+.pieDePagina {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+.tituloFooter {
+    font-size: 2em;
+    padding-bottom: 10px;
+}
+
+/* ############# Tu Lista Tabla ############# */
+
+.h2Lista {
+    font-size: 2em;
+    margin: 60px auto;
+}
+
+.tabla {
+    width: 900px;
+    margin: 30px auto 80px auto;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+.tablaCabeza {
+    font-family: "Fantasy-One";
+    font-size: 1.5em;
+    color: orangered;
+    font-weight: 800;
+}
+
+.tablaCuerpo {
+    font-weight: 800;
+}
+
+.fila {
+    border-top: 2px groove blue;
+
+    &:nth-child(even) {
+        color: rgb(223, 215, 171);
+    }
+
+    &:hover {
+        color: $Rosa1;
+        box-shadow: 0px 0px 2px 2px #cc7bff;
+    }
+}

@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ############# Variables ############# */
+@font-face {
+  font-family: "Fantasy-One";
+  src: url("../letra/Fantasy-One.ttf.eot");
+  src: url("../letra/Fantasy-One.ttf.woff") format("woff");
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#141414), color-stop(20%, #303030), color-stop(40%, #141414), color-stop(60%, #303030), color-stop(80%, #141414), to(#303030));
+  background: linear-gradient(#141414 0%, #303030 20%, #141414 40%, #303030 60%, #141414 80%, #303030 100%);
+  color: white;
+}
+
+/* ############# Encabezado ############# */
+.encabezado {
+  width: 100%;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo {
+  font-size: 3em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#300083), to(#2b40ff));
+  background: linear-gradient(#300083, #2b40ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.logo span {
+  background: -webkit-gradient(linear, left top, left bottom, from(#740081), to(#b247ff));
+  background: linear-gradient(#740081, #b247ff);
+  -webkit-background-clip: text;
+}
+
+/* ############# Navegador ############# */
+.navegador {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navegador ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+.navegador ul li {
+  font-size: 2em;
+  width: 100%;
+}
+
+.navegador ul li span {
+  background: -webkit-gradient(linear, left top, left bottom, from(#740081), to(#b247ff));
+  background: linear-gradient(#740081, #b247ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navegador ul li a {
+  text-decoration: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#300083), to(#2b40ff));
+  background: linear-gradient(#300083, #2b40ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navegador ul li a:hover {
+  color: #ff28ed;
+}
+
+/* ############# Index Contenido Principal ############# */
+main {
+  min-height: 80vh;
+}
+
+.InformacionPrincipal {
+  text-align: center;
+  font-family: "Fantasy-One";
+}
+
+.InformacionPrincipal h2 {
+  font-size: 2em;
+}
+
+.InformacionPrincipal p {
+  font-size: 1.2em;
+}
+
+/* ############# Index Seccion Formulario Busqueda ############# */
+.formulario {
+  padding-top: 40px;
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: "Fantasy-One";
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.form-group input,
+.form-group select {
+  width: 186px;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* ############# Index Seccion Series ############# */
+.contenedorSeries {
+  width: 90%;
+  padding: 0px 4%;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.anime {
+  margin-top: 20px;
+  width: 192px;
+  height: 320px;
+  border-radius: 15px;
+}
+
+.hideAnime {
+  display: none;
+}
+
+.displayAnime {
+  display: initial;
+}
+
+.linkAnime {
+  width: 100%;
+  height: 100%;
+}
+
+.animeContenedor {
+  width: 100%;
+  height: 90%;
+  padding-top: 5px;
+  border-radius: 15px;
+  background: linear-gradient(225deg, #0b3cbf 0%, #ff4000 50%, #DED700 100%);
+}
+
+.imagenAnime {
+  width: 98%;
+  height: 96%;
+  margin: auto;
+  margin-top: 3px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.imagenAnime1 {
+  background-image: url(../imagenes/anime1.jpg);
+}
+
+.imagenAnime2 {
+  background-image: url(../imagenes/anime2.jpg);
+}
+
+.imagenAnime3 {
+  background-image: url(../imagenes/anime3.jpg);
+}
+
+.imagenAnime4 {
+  background-image: url(../imagenes/anime4.jpg);
+}
+
+.imagenAnime5 {
+  background-image: url(../imagenes/anime5.jpg);
+}
+
+.imagenAnime6 {
+  background-image: url(../imagenes/anime6.jpg);
+}
+
+.imagenAnime7 {
+  background-image: url(../imagenes/anime7.jpg);
+}
+
+.imagenAnime8 {
+  background-image: url(../imagenes/anime8.jpg);
+}
+
+.imagenAnime9 {
+  background-image: url(../imagenes/anime9.jpg);
+}
+
+.imagenAnime10 {
+  background-image: url(../imagenes/anime10.jpg);
+}
+
+.tituloAnime {
+  width: 100%;
+  padding: 6%;
+  border-radius: 2px 2px 15px 15px;
+  margin: auto;
+  margin-top: -20px;
+  display: block;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#333));
+  background: linear-gradient(#eee, #333);
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  border-width: 0px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.tituloAnime:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#767676));
+  background: linear-gradient(#dfdfdf, #767676);
+  color: orangered;
+}
+
+.tituloAnime:active {
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.54);
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.54);
+  background: -webkit-gradient(linear, left top, left bottom, from(lightgray), to(#424242));
+  background: linear-gradient(lightgray, #424242);
+  color: orange;
+}
+
+/* ############# Pie de Pagina ############# */
+.pieDePagina {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+.tituloFooter {
+  font-size: 2em;
+  padding-bottom: 10px;
+}
+
+/* ############# Tu Lista Tabla ############# */
+.h2Lista {
+  font-size: 2em;
+  margin: 60px auto;
+}
+
+.tabla {
+  width: 900px;
+  margin: 30px auto 80px auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+.tablaCabeza {
+  font-family: "Fantasy-One";
+  font-size: 1.5em;
+  color: orangered;
+  font-weight: 800;
+}
+
+.tablaCuerpo {
+  font-weight: 800;
+}
+
+.fila {
+  border-top: 2px groove blue;
+}
+
+.fila:nth-child(even) {
+  color: #dfd7ab;
+}
+
+.fila:hover {
+  color: #ff28ed;
+  -webkit-box-shadow: 0px 0px 2px 2px #cc7bff;
+          box-shadow: 0px 0px 2px 2px #cc7bff;
+}
+/*# sourceMappingURL=style.css.map */
