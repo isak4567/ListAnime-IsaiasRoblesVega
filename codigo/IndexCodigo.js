@@ -113,25 +113,6 @@ function agregarLista(e) {
     if ((serieLista.find(element => element.nombre == e.target.innerHTML)) == undefined) {
         serieLista.push(buscaNombre(e.target.innerHTML));
     }
-    
-    tablaCuerpo.innerHTML = escritorLista(serieLista);
+    sessionStorage.setItem("TuLista",JSON.stringify(serieLista));
 }
 
-function iterador(array) {
-    return array.slice(1);
-}
-
-function escritorLista(array) {
-    let InfoPerfil = "";
-
-    array.forEach( element => {
-        InfoPerfil+= `<tr class="fila"> 
-                            <td>${element.nombre}</td>
-                            <td>${iterador(element.generos).join(" - ")}</td>
-                            <td>${element.transmision[1]}</td>
-                            <td class="notaSerie"> espera </td>
-                       </tr> `;
-    })
-    console.log(InfoPerfil);
-    return InfoPerfil;
-}
