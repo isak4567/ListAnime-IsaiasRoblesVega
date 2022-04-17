@@ -159,8 +159,8 @@ main {
 
 .anime {
   margin-top: 20px;
-  width: 192px;
-  height: 320px;
+  width: 216px;
+  height: 344px;
   border-radius: 15px;
 }
 
@@ -288,7 +288,7 @@ main {
 }
 
 .tabla {
-  width: 900px;
+  width: 1000px;
   margin: 30px auto 80px auto;
   text-align: center;
   border-collapse: collapse;
@@ -301,13 +301,14 @@ td {
 
 .tablaCabeza {
   font-family: "Fantasy-One";
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: orangered;
   font-weight: 800;
 }
 
 .tablaCuerpo {
   font-weight: 800;
+  font-size: 1.4em;
 }
 
 .fila {

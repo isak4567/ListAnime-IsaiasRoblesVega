@@ -84,7 +84,7 @@ function validarFormulario(e) {
 }
 
 let animes = [
-    new Serie("Naruto", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
+    new Serie("Naruto Shippuden", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
     new Serie("Dragon Ball Super", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
     new Serie("Shrek 2", ["Todos", "Accion", "Comedia"], ["Todos", "Pelicula"]),
     new Serie("Boku no p", ["Todos", "Romance", "Misterio"], ["Todos", "Pelicula"]),
@@ -102,3 +102,36 @@ let formularioFiltro = document.querySelector(".formulario");
 formularioFiltro.addEventListener("submit", validarFormulario);
 
 EscritorPagina("");
+
+let botonSerie = document.querySelectorAll(".tituloAnime");
+let tablaCuerpo = document.querySelector(".tablaCuerpo");
+let serieLista = [];
+
+botonSerie.forEach(element => element.addEventListener("click", agregarLista));
+
+function agregarLista(e) {
+    if ((serieLista.find(element => element.nombre == e.target.innerHTML)) == undefined) {
+        serieLista.push(buscaNombre(e.target.innerHTML));
+    }
+    
+    tablaCuerpo.innerHTML = escritorLista(serieLista);
+}
+
+function iterador(array) {
+    return array.slice(1);
+}
+
+function escritorLista(array) {
+    let InfoPerfil = "";
+
+    array.forEach( element => {
+        InfoPerfil+= `<tr class="fila"> 
+                            <td>${element.nombre}</td>
+                            <td>${iterador(element.generos).join(" - ")}</td>
+                            <td>${element.transmision[1]}</td>
+                            <td class="notaSerie"> espera </td>
+                       </tr> `;
+    })
+    console.log(InfoPerfil);
+    return InfoPerfil;
+}
