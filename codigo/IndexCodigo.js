@@ -1,5 +1,5 @@
 class Serie {
-    constructor(nombre, generos, transmision, orden) {
+    constructor(nombre, generos, transmision) {
         this.nombre = nombre;
         this.generos = generos;
         this.transmision = transmision;
@@ -29,8 +29,8 @@ function Escritor(array, string) {
     let acumulador = "";
 
     for (let i = 0; i < array.length; i++) {
-        acumulador += 
-    `<div class="anime ${array[i].nombre.replace(/\s+/g, '')}${string}">
+        acumulador +=
+            `<div class="anime ${array[i].nombre.replace(/\s+/g, '')}${string}">
         <a class="linkAnime" href="#">
             <div class="animeContenedor">
                 <div class="imagenAnime"></div>
@@ -44,14 +44,34 @@ function Escritor(array, string) {
 }
 
 function EscritorPagina(agregarClase) {
+    let contenedorSerie = document.querySelector(".contenedorSeries");
     contenedorSerie.innerHTML = Escritor(animes, agregarClase);
 
-    let imagenSerie = document.querySelectorAll(".imagenAnime");
+    let botonSerie = document.querySelectorAll(".tituloAnime");
+    botonSerie.forEach(element => element.addEventListener("click", agregarLista));
 
+    let imagenSerie = document.querySelectorAll(".imagenAnime");
     for (let i = 0; i < imagenSerie.length; i++) {
         imagenSerie[i].className += ` imagenAnime${i+1}`;
     }
 }
+
+let animes = [
+    new Serie("Naruto Shippuden", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
+    new Serie("Dragon Ball Super", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
+    new Serie("Shrek 2", ["Todos", "Accion", "Comedia"], ["Todos", "Pelicula"]),
+    new Serie("Boku no p", ["Todos", "Romance", "Misterio"], ["Todos", "Pelicula"]),
+    new Serie("Hellsing Ultimate", ["Todos", "Accion"], ["Todos", "Ova"]),
+    new Serie("Soul Eater", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
+    new Serie("Nichijou", ["Todos", "Comedia"], ["Todos", "Tv"]),
+    new Serie("Gintama", ["Todos", "Comedia", "Fantasia"], ["Todos", "Tv"]),
+    new Serie("Evangelion", ["Todos", "Accion", "Drama"], ["Todos", "Tv"]),
+    new Serie("Kino Journey", ["Todos", "Aventura", "Fantasia"], ["Todos", "Tv"])
+];
+
+let formularioFiltro = document.querySelector(".formulario");
+formularioFiltro.addEventListener("submit", validarFormulario);
+
 // validarFormulario: al tocar el filtrar la pagina se crea de vuelta y esconde todos sus items que no esten buscados.
 function validarFormulario(e) {
     e.preventDefault();
@@ -61,7 +81,7 @@ function validarFormulario(e) {
     EscritorPagina(" hideAnime");
 
     let buscarSerie = buscaNombre(formulario.children[0].children[1].value);
-    // si no hay nombre que buscar, se pone ah fijarse que hay para filtrar
+    // si no hay nombre que buscar, se pone a fijarse que hay para filtrar
     if (buscarSerie === undefined) {
         let arraySeriesGenero = filtrarSerie(1, formulario.children[1].children[1].value);
         let arraySeriesTipo = filtrarSerie(2, formulario.children[2].children[1].value);
@@ -83,36 +103,13 @@ function validarFormulario(e) {
     }
 }
 
-let animes = [
-    new Serie("Naruto Shippuden", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
-    new Serie("Dragon Ball Super", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
-    new Serie("Shrek 2", ["Todos", "Accion", "Comedia"], ["Todos", "Pelicula"]),
-    new Serie("Boku no p", ["Todos", "Romance", "Misterio"], ["Todos", "Pelicula"]),
-    new Serie("Hellsing Ultimate", ["Todos", "Accion"], ["Todos", "Ova"]),
-    new Serie("Soul Eater", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
-    new Serie("Nichijou", ["Todos", "Comedia"], ["Todos", "Tv"]),
-    new Serie("Gintama", ["Todos", "Comedia", "Fantasia"], ["Todos", "Tv"]),
-    new Serie("Evangelion", ["Todos", "Accion", "Drama"], ["Todos", "Tv"]),
-    new Serie("Kino Journey", ["Todos", "Aventura", "Fantasia"], ["Todos", "Tv"])
-];
-
-let contenedorSerie = document.querySelector(".contenedorSeries");
-let formularioFiltro = document.querySelector(".formulario");
-
-formularioFiltro.addEventListener("submit", validarFormulario);
-
 EscritorPagina("");
 
-let botonSerie = document.querySelectorAll(".tituloAnime");
-let tablaCuerpo = document.querySelector(".tablaCuerpo");
 let serieLista = [];
-
-botonSerie.forEach(element => element.addEventListener("click", agregarLista));
 
 function agregarLista(e) {
     if ((serieLista.find(element => element.nombre == e.target.innerHTML)) == undefined) {
         serieLista.push(buscaNombre(e.target.innerHTML));
     }
-    sessionStorage.setItem("TuLista",JSON.stringify(serieLista));
+    sessionStorage.setItem("TuLista", JSON.stringify(serieLista));
 }
-

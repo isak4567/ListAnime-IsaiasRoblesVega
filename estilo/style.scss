@@ -139,8 +139,8 @@ main {
 
 .anime {
     margin-top: 20px;
-    width: 216px;
-    height: 344px;
+    width: 204px;
+    height: 348px;
     border-radius: 15px;
 }
 
@@ -175,13 +175,13 @@ main {
     background-size: cover;
     background-position: bottom;
 }
-
+// imagenes de las series
 @for $i from 1 through 10 {
     .imagenAnime#{$i} {
         background-image: url(../imagenes/anime#{$i}.jpg);
     }
 }
-
+// Boton de agregar serie
 .tituloAnime {
     width: 100%;
     padding: 6%;
@@ -202,7 +202,7 @@ main {
     &:hover {
         background: linear-gradient(rgb(223, 223, 223), rgb(118, 118, 118));
         color: orangered;
-    } 
+    }
 
     &:active {
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.54);
@@ -264,6 +264,38 @@ td {
 
     &:hover {
         color: $Rosa1;
-        box-shadow: 0px 0px 2px 2px #cc7bff;
+        box-shadow: 0px 0px 2px 2px $Rosa1;
+    }
+}
+
+// ########## Estrellas ##########
+@for $i from 1 through 4 {
+    .rating-group-#{$i} {
+        display: flex;
+        justify-content: center;
+        transform: rotateY(180deg);
+
+        input {
+            display: none;
+        }
+
+        label {
+            cursor: pointer;
+            padding: 0 0.1em;
+            font-size: 1em;
+            color: $Negro2;
+        }
+
+        input:checked~label span {
+            color: $Azul2;
+        }
+
+        &:hover label span {
+            color: $Violeta2;       
+        }
+
+        input:hover~label span {
+            color: $Rosa1;
+        }
     }
 }

@@ -159,8 +159,8 @@ main {
 
 .anime {
   margin-top: 20px;
-  width: 216px;
-  height: 344px;
+  width: 204px;
+  height: 348px;
   border-radius: 15px;
 }
 
@@ -321,7 +321,143 @@ td {
 
 .fila:hover {
   color: #ff28ed;
-  -webkit-box-shadow: 0px 0px 2px 2px #cc7bff;
-          box-shadow: 0px 0px 2px 2px #cc7bff;
+  -webkit-box-shadow: 0px 0px 2px 2px #ff28ed;
+          box-shadow: 0px 0px 2px 2px #ff28ed;
+}
+
+.rating-group-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.rating-group-1 input {
+  display: none;
+}
+
+.rating-group-1 label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 1em;
+  color: #303030;
+}
+
+.rating-group-1 input:checked ~ label span {
+  color: #2b40ff;
+}
+
+.rating-group-1:hover label span {
+  color: #b247ff;
+}
+
+.rating-group-1 input:hover ~ label span {
+  color: #ff28ed;
+}
+
+.rating-group-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.rating-group-2 input {
+  display: none;
+}
+
+.rating-group-2 label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 1em;
+  color: #303030;
+}
+
+.rating-group-2 input:checked ~ label span {
+  color: #2b40ff;
+}
+
+.rating-group-2:hover label span {
+  color: #b247ff;
+}
+
+.rating-group-2 input:hover ~ label span {
+  color: #ff28ed;
+}
+
+.rating-group-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.rating-group-3 input {
+  display: none;
+}
+
+.rating-group-3 label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 1em;
+  color: #303030;
+}
+
+.rating-group-3 input:checked ~ label span {
+  color: #2b40ff;
+}
+
+.rating-group-3:hover label span {
+  color: #b247ff;
+}
+
+.rating-group-3 input:hover ~ label span {
+  color: #ff28ed;
+}
+
+.rating-group-4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.rating-group-4 input {
+  display: none;
+}
+
+.rating-group-4 label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 1em;
+  color: #303030;
+}
+
+.rating-group-4 input:checked ~ label span {
+  color: #2b40ff;
+}
+
+.rating-group-4:hover label span {
+  color: #b247ff;
+}
+
+.rating-group-4 input:hover ~ label span {
+  color: #ff28ed;
 }
 /*# sourceMappingURL=style.css.map */
