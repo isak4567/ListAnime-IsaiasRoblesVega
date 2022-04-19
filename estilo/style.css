@@ -366,7 +366,7 @@ td {
   color: #ff28ed;
 }
 
-.botonCancelar {
+.botonesCancelar {
   padding-top: 83px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,14 +377,14 @@ td {
           flex-direction: column;
 }
 
-.botonCancelar i {
+.botonesCancelar i {
   padding-bottom: 8px;
   color: white;
   font-size: 40px;
   cursor: pointer;
 }
 
-.botonCancelar i:hover {
+.botonesCancelar i:hover {
   color: #ff28ed;
 }
 /*# sourceMappingURL=style.css.map */
