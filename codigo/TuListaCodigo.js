@@ -1,10 +1,15 @@
 
-let tablaCuerpo = document.querySelector(".tablaCuerpo");
-let tuLista = JSON.parse(sessionStorage.getItem("TuLista"));
+let tuLista = [];
 
+for (let i = 0; i < sessionStorage.length; i++) {
+    let clave = sessionStorage.key(i);
+    tuLista.push(JSON.parse(sessionStorage.getItem(clave)));
+}
+
+let tablaCuerpo = document.querySelector(".tablaCuerpo");
 tablaCuerpo.innerHTML = escritorLista(tuLista);
 
-console.log(serieLista);
+
 
 function escritorLista(array) {
     let InfoPerfil = "";
@@ -16,7 +21,7 @@ function escritorLista(array) {
             <td>${element.nombre}</td>
             <td>${element.generos.slice(1).join(" - ")}</td>
             <td>${element.transmision[1]}</td>
-            <td class="rating-group-${i}">
+            <td class="rating-group">
 
                 <input type="radio" name="star-${i}" id="star1-${i}">
                 <label for="star1-${i}"><span class="fa fa-star checked"></span></label>

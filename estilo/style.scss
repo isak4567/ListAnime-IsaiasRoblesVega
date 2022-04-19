@@ -117,7 +117,6 @@ main {
     text-align: center;
     font-size: 1.5em;
 
-
     input,
     select {
         width: 186px;
@@ -168,26 +167,25 @@ main {
 .imagenAnime {
     width: 98%;
     height: 96%;
-    margin: auto;
-    margin-top: 3px;
+    margin: 3px auto 0px auto;
     border-radius: 15px;
-
     background-size: cover;
     background-position: bottom;
 }
+
 // imagenes de las series
 @for $i from 1 through 10 {
     .imagenAnime#{$i} {
         background-image: url(../imagenes/anime#{$i}.jpg);
     }
 }
+
 // Boton de agregar serie
 .tituloAnime {
     width: 100%;
     padding: 6%;
     border-radius: 2px 2px 15px 15px;
-    margin: auto;
-    margin-top: -20px;
+    margin: -20px auto 0 auto;
     display: block;
     background: linear-gradient(#eee, #333);
     text-align: center;
@@ -231,9 +229,14 @@ main {
     margin: 60px auto;
 }
 
+.listaSeriesTabla {
+    display: flex;
+    justify-content: center;
+}
+
 .tabla {
     width: 1000px;
-    margin: 30px auto 80px auto;
+    margin: 30px 0px 30px 0px;
     text-align: center;
     border-collapse: collapse;
 }
@@ -268,33 +271,50 @@ td {
     }
 }
 
-// ########## Estrellas ##########
-@for $i from 1 through 4 {
-    .rating-group-#{$i} {
-        display: flex;
-        justify-content: center;
-        transform: rotateY(180deg);
+// ########## Tu Lista Estrellas ##########
+.rating-group {
+    display: flex;
+    justify-content: center;
+    transform: rotateY(180deg);
 
-        input {
-            display: none;
-        }
+    input {
+        display: none;
+    }
 
-        label {
-            cursor: pointer;
-            padding: 0 0.1em;
-            font-size: 1em;
-            color: $Negro2;
-        }
+    label {
+        cursor: pointer;
+        padding: 0 0.1em;
+        font-size: 1em;
+        color: $Negro2;
+    }
 
-        input:checked~label span {
-            color: $Azul2;
-        }
+    input:checked~label span {
+        color: $Azul2;
+    }
 
-        &:hover label span {
-            color: $Violeta2;       
-        }
+    &:hover label span {
+        color: $Violeta2;
+    }
 
-        input:hover~label span {
+    input:hover~label span {
+        color: $Rosa1;
+    }
+}
+
+
+// ########## Tu Lista BotonCancelar ##########
+.botonCancelar {
+    padding-top: 83px;
+    display: flex;
+    flex-direction: column;
+
+    i {
+        padding-bottom: 8px;
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        cursor: pointer;
+
+        &:hover {
             color: $Rosa1;
         }
     }

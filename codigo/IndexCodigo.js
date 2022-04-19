@@ -48,7 +48,7 @@ function EscritorPagina(agregarClase) {
     contenedorSerie.innerHTML = Escritor(animes, agregarClase);
 
     let botonSerie = document.querySelectorAll(".tituloAnime");
-    botonSerie.forEach(element => element.addEventListener("click", agregarLista));
+    botonSerie.forEach(element => element.addEventListener("click", agregarATuLista));
 
     let imagenSerie = document.querySelectorAll(".imagenAnime");
     for (let i = 0; i < imagenSerie.length; i++) {
@@ -103,13 +103,9 @@ function validarFormulario(e) {
     }
 }
 
-EscritorPagina("");
-
-let serieLista = [];
-
-function agregarLista(e) {
-    if ((serieLista.find(element => element.nombre == e.target.innerHTML)) == undefined) {
-        serieLista.push(buscaNombre(e.target.innerHTML));
-    }
-    sessionStorage.setItem("TuLista", JSON.stringify(serieLista));
+// Guarda cada serie en sessionStorage para ser usado en TuLista.
+function agregarATuLista(e) {
+    sessionStorage.setItem(`${e.target.innerHTML}`, JSON.stringify(buscaNombre(e.target.innerHTML)));
 }
+
+EscritorPagina("");

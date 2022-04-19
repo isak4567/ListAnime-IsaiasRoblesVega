@@ -1,0 +1,4 @@
+ Si se abre en live server de Visual Studio Code
+ la Lista de TuLista no se va mostrar por un dato que mete
+ live server al ssesionStorage destruyendo como arma 
+ la lista la funcion.

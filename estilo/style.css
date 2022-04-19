@@ -188,8 +188,7 @@ main {
 .imagenAnime {
   width: 98%;
   height: 96%;
-  margin: auto;
-  margin-top: 3px;
+  margin: 3px auto 0px auto;
   border-radius: 15px;
   background-size: cover;
   background-position: bottom;
@@ -239,8 +238,7 @@ main {
   width: 100%;
   padding: 6%;
   border-radius: 2px 2px 15px 15px;
-  margin: auto;
-  margin-top: -20px;
+  margin: -20px auto 0 auto;
   display: block;
   background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#333));
   background: linear-gradient(#eee, #333);
@@ -287,9 +285,18 @@ main {
   margin: 60px auto;
 }
 
+.listaSeriesTabla {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .tabla {
   width: 1000px;
-  margin: 30px auto 80px auto;
+  margin: 30px 0px 30px 0px;
   text-align: center;
   border-collapse: collapse;
 }
@@ -325,7 +332,7 @@ td {
           box-shadow: 0px 0px 2px 2px #ff28ed;
 }
 
-.rating-group-1 {
+.rating-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,128 +343,48 @@ td {
           transform: rotateY(180deg);
 }
 
-.rating-group-1 input {
+.rating-group input {
   display: none;
 }
 
-.rating-group-1 label {
+.rating-group label {
   cursor: pointer;
   padding: 0 0.1em;
   font-size: 1em;
   color: #303030;
 }
 
-.rating-group-1 input:checked ~ label span {
+.rating-group input:checked ~ label span {
   color: #2b40ff;
 }
 
-.rating-group-1:hover label span {
+.rating-group:hover label span {
   color: #b247ff;
 }
 
-.rating-group-1 input:hover ~ label span {
+.rating-group input:hover ~ label span {
   color: #ff28ed;
 }
 
-.rating-group-2 {
+.botonCancelar {
+  padding-top: 83px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.rating-group-2 input {
-  display: none;
-}
-
-.rating-group-2 label {
+.botonCancelar i {
+  padding-bottom: 8px;
+  color: white;
+  font-size: 40px;
   cursor: pointer;
-  padding: 0 0.1em;
-  font-size: 1em;
-  color: #303030;
 }
 
-.rating-group-2 input:checked ~ label span {
-  color: #2b40ff;
-}
-
-.rating-group-2:hover label span {
-  color: #b247ff;
-}
-
-.rating-group-2 input:hover ~ label span {
-  color: #ff28ed;
-}
-
-.rating-group-3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.rating-group-3 input {
-  display: none;
-}
-
-.rating-group-3 label {
-  cursor: pointer;
-  padding: 0 0.1em;
-  font-size: 1em;
-  color: #303030;
-}
-
-.rating-group-3 input:checked ~ label span {
-  color: #2b40ff;
-}
-
-.rating-group-3:hover label span {
-  color: #b247ff;
-}
-
-.rating-group-3 input:hover ~ label span {
-  color: #ff28ed;
-}
-
-.rating-group-4 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.rating-group-4 input {
-  display: none;
-}
-
-.rating-group-4 label {
-  cursor: pointer;
-  padding: 0 0.1em;
-  font-size: 1em;
-  color: #303030;
-}
-
-.rating-group-4 input:checked ~ label span {
-  color: #2b40ff;
-}
-
-.rating-group-4:hover label span {
-  color: #b247ff;
-}
-
-.rating-group-4 input:hover ~ label span {
+.botonCancelar i:hover {
   color: #ff28ed;
 }
 /*# sourceMappingURL=style.css.map */
