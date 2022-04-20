@@ -222,6 +222,53 @@ main {
     padding-bottom: 10px;
 }
 
+// ############# Cartel Agregado #############
+.cartelAgregarSerie {
+    display: none;
+    position: sticky;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    
+    p {
+        background-color: rgb(44, 44, 44);
+        font: 800 20px "Fantasy-One";
+        color: rgb(255, 110, 57);
+        border: 3px double $Violeta2;
+        padding: 2%;
+    }
+}
+
+.activo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: entrar 2s forwards 1;
+    opacity: 0;
+}
+
+@keyframes entrar {
+    0% {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-50vh);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-50vh);
+    }
+
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
 /* ############# Tu Lista Tabla ############# */
 
 .h2Lista {

@@ -103,8 +103,17 @@ function validarFormulario(e) {
     }
 }
 
-// Guarda cada serie en sessionStorage para ser usado en TuLista.
+// Guarda cada serie en sessionStorage para ser usado en TuLista y muestra un cartel de agregado
 function agregarATuLista(e) {
+    if (sessionStorage.getItem(e.target.innerHTML) == null) {
+        let cartelAgregarSerie = document.querySelector(".cartelAgregarSerie");
+        
+        cartelAgregarSerie.className = "cartelAgregarSerie activo";
+        cartelAgregarSerie.innerHTML = `<p>${e.target.innerHTML} a sido agruegada a tu lista </p>`;
+        
+        cartelAgregarSerie.addEventListener("animationend", () => cartelAgregarSerie.className = "cartelAgregarSerie");
+    }
+
     sessionStorage.setItem(`${e.target.innerHTML}`, JSON.stringify(buscaNombre(e.target.innerHTML)));
 }
 
