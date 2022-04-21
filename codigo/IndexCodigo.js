@@ -7,11 +7,15 @@ class Serie {
 }
 
 function buscaNombre(nombre) {
-    const serie = animes.find(obj => obj.nombre == nombre);
 
-    if (serie !== undefined) {
-        return serie;
+    if (nombre.length > 3) {
+        const serie = animes.find(obj => obj.nombre.toLowerCase().includes(nombre.toLowerCase()));
+
+        if (serie !== undefined) {
+            return serie;
+        }
     }
+
 }
 
 function filtrarSerie(metodoBusqueda, dato) {
@@ -103,18 +107,20 @@ function validarFormulario(e) {
     }
 }
 
+let seriesLista = JSON.parse(sessionStorage.getItem("serieLista")) || [];
 // Guarda cada serie en sessionStorage para ser usado en TuLista y muestra un cartel de agregado
 function agregarATuLista(e) {
-    if (sessionStorage.getItem(e.target.innerHTML) == null) {
+    if ((seriesLista.find(el => el.nombre == e.target.innerHTML)) == undefined) {
         let cartelAgregarSerie = document.querySelector(".cartelAgregarSerie");
-        
+
         cartelAgregarSerie.className = "cartelAgregarSerie activo";
         cartelAgregarSerie.innerHTML = `<p>${e.target.innerHTML} a sido agruegada a tu lista </p>`;
-        
-        cartelAgregarSerie.addEventListener("animationend", () => cartelAgregarSerie.className = "cartelAgregarSerie");
-    }
 
-    sessionStorage.setItem(`${e.target.innerHTML}`, JSON.stringify(buscaNombre(e.target.innerHTML)));
+        cartelAgregarSerie.addEventListener("animationend", () => cartelAgregarSerie.className = "cartelAgregarSerie");
+
+        seriesLista.push(buscaNombre(e.target.innerHTML));
+        sessionStorage.setItem("serieLista", JSON.stringify(seriesLista));
+    }
 }
 
 EscritorPagina("");
