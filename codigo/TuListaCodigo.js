@@ -12,20 +12,20 @@ function escritorLista(array) {
             <td>${element.transmision[1]}</td>
             <td class="rating-group">
 
-                <input type="radio" value="${i}-1 star" name="star-${i}" id="star1-${i}">
-                <label for="star1-${i}"><span class="fa fa-star"></span></label>
+                <input type="radio" name="star-${i}" id="${element.nombre.replace(/\s+/g, '')}-star1">
+                <label for="${element.nombre.replace(/\s+/g, '')}-star1"><span class="fa fa-star"></span></label>
 
-                <input type="radio" value="${i}-2 star" name="star-${i}" id="star2-${i}">
-                <label for="star2-${i}"><span class="fa fa-star"></span></label>
+                <input type="radio" name="star-${i}" id="${element.nombre.replace(/\s+/g, '')}-star2">
+                <label for="${element.nombre.replace(/\s+/g, '')}-star2"><span class="fa fa-star"></span></label>
 
-                <input type="radio" value="${i}-3 star" name="star-${i}" id="star3-${i}">
-                <label for="star3-${i}"><span class="fa fa-star"></span></label>
+                <input type="radio" name="star-${i}" id="${element.nombre.replace(/\s+/g, '')}-star3">
+                <label for="${element.nombre.replace(/\s+/g, '')}-star3"><span class="fa fa-star"></span></label>
 
-                <input type="radio" value="${i}-4 star" name="star-${i}" id="star4-${i}">
-                <label for="star4-${i}"><span class="fa fa-star"></span></label>
+                <input type="radio" name="star-${i}" id="${element.nombre.replace(/\s+/g, '')}-star4">
+                <label for="${element.nombre.replace(/\s+/g, '')}-star4"><span class="fa fa-star"></span></label>
 
-                <input type="radio" value="${i}-5 star" name="star-${i}" id="star5-${i}">
-                <label for="star5-${i}"><span class="fa fa-star"></span></label>
+                <input type="radio" name="star-${i}" id="${element.nombre.replace(/\s+/g, '')}-star5">
+                <label for="${element.nombre.replace(/\s+/g, '')}-star5"><span class="fa fa-star"></span></label>
 
             </td>
         </tr> `;
@@ -46,6 +46,12 @@ function CreadorLista() {
 
     let cancelarSerie = document.querySelectorAll("i");
     cancelarSerie.forEach(el => el.addEventListener("click", borrarDeLista));
+
+    if (sessionStorage.getItem("notaLista") !== null) {
+        let notaLista = JSON.parse(sessionStorage.getItem("notaLista"));
+
+        notaLista.forEach(element => document.getElementById(element).checked = true);
+    }
 }
 
 function borrarDeLista(e) {
@@ -54,19 +60,28 @@ function borrarDeLista(e) {
 
     sessionStorage.setItem("serieLista", JSON.stringify(tuListaBorrar));
 
+    let notaBorrar = JSON.parse(sessionStorage.getItem("notaLista"));
+    notaBorrar = notaBorrar.filter(el => !(el.includes(e.target.id.replace(/\s+/g, ''))));
+
+    sessionStorage.setItem("notaLista", JSON.stringify(notaBorrar));
+
     CreadorLista();
+    notaEstrellas();
+}
+
+function notaEstrellas() {
+    let notaLista = JSON.parse(sessionStorage.getItem("notaLista")) || [];
+
+    let inputStar = document.querySelectorAll(`input`);
+
+    inputStar.forEach(element => {
+
+        element.onclick = (e) => {
+            notaLista.push(e.target.id);
+            sessionStorage.setItem("notaLista", JSON.stringify(notaLista));
+        };
+    });
 }
 
 CreadorLista();
-
-/* let inputStar = document.querySelectorAll(`input`);
-inputStar.forEach(element => {
-    element.onclick = (e) => {
-        console.log(e.target.value);
-    };
-});
-
- */
-
-//poner un agregar nota en el evento de on click al nombre del target,
-// asi ponerle la nota al objeto y de ahi hacer el objeto input.
+notaEstrellas();
