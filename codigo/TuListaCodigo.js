@@ -60,7 +60,7 @@ function borrarDeLista(e) {
 
     sessionStorage.setItem("serieLista", JSON.stringify(tuListaBorrar));
 
-    let notaBorrar = JSON.parse(sessionStorage.getItem("notaLista"));
+    let notaBorrar = JSON.parse(sessionStorage.getItem("notaLista")) || [];
     notaBorrar = notaBorrar.filter(el => !(el.includes(e.target.id.replace(/\s+/g, ''))));
 
     sessionStorage.setItem("notaLista", JSON.stringify(notaBorrar));

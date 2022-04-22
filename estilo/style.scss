@@ -225,7 +225,7 @@ main {
 // ############# Cartel Agregado #############
 .cartelAgregarSerie {
     display: none;
-    position: sticky;
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
@@ -251,21 +251,21 @@ main {
 @keyframes entrar {
     0% {
         opacity: 0;
-        transform: translateY(-100vh);
+        transform: translateY(-50vh);
     }
 
     30% {
         opacity: 1;
-        transform: translateY(-50vh);
+        transform: translateY(0);
     }
 
     70% {
         opacity: 1;
-        transform: translateY(-50vh);
+        transform: translateY(0);
     }
 
     100% {
-        transform: translateY(-100vh);
+        transform: translateY(-50vh);
     }
 }
 
