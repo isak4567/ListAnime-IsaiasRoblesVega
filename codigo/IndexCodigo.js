@@ -8,7 +8,7 @@ class Serie {
 
 function buscaNombre(nombre) {
 
-    if (nombre.length > 3) {
+    if (nombre.length > 1) {
         const serie = animes.find(obj => obj.nombre.toLowerCase().includes(nombre.toLowerCase()));
 
         if (serie !== undefined) {

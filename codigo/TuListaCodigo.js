@@ -12,20 +12,20 @@ function escritorLista(array) {
             <td>${element.transmision[1]}</td>
             <td class="rating-group">
 
-                <input type="radio" value="${i}-1 star" class="star-group-${i}" name="star-${i}" id="star1-${i}">
-                <label for="star1-${i}"><span class="fa fa-star checked"></span></label>
+                <input type="radio" value="${i}-1 star" name="star-${i}" id="star1-${i}">
+                <label for="star1-${i}"><span class="fa fa-star"></span></label>
 
-                <input type="radio" value="${i}-2 star" class="star-group-${i}" name="star-${i}" id="star2-${i}">
-                <label for="star2-${i}"><span class="fa fa-star checked"></span></label>
+                <input type="radio" value="${i}-2 star" name="star-${i}" id="star2-${i}">
+                <label for="star2-${i}"><span class="fa fa-star"></span></label>
 
-                <input type="radio" value="${i}-3 star" class="star-group-${i}" name="star-${i}" id="star3-${i}">
-                <label for="star3-${i}"><span class="fa fa-star checked"></span></label>
+                <input type="radio" value="${i}-3 star" name="star-${i}" id="star3-${i}">
+                <label for="star3-${i}"><span class="fa fa-star"></span></label>
 
-                <input type="radio" value="${i}-4 star" class="star-group-${i}" name="star-${i}" id="star4-${i}">
-                <label for="star4-${i}"><span class="fa fa-star checked"></span></label>
+                <input type="radio" value="${i}-4 star" name="star-${i}" id="star4-${i}">
+                <label for="star4-${i}"><span class="fa fa-star"></span></label>
 
-                <input type="radio" value="${i}-5 star" class="star-group-${i}" name="star-${i}" id="star5-${i}">
-                <label for="star5-${i}"><span class="fa fa-star checked"></span></label>
+                <input type="radio" value="${i}-5 star" name="star-${i}" id="star5-${i}">
+                <label for="star5-${i}"><span class="fa fa-star"></span></label>
 
             </td>
         </tr> `;
@@ -59,11 +59,14 @@ function borrarDeLista(e) {
 
 CreadorLista();
 
-let inputStar = document.querySelectorAll(`input`);
+/* let inputStar = document.querySelectorAll(`input`);
 inputStar.forEach(element => {
     element.onclick = (e) => {
-        sessionStorage.setItem(`${e.target.className}`,JSON.stringify(`${e.target.value}`));
+        console.log(e.target.value);
     };
 });
 
+ */
 
+//poner un agregar nota en el evento de on click al nombre del target,
+// asi ponerle la nota al objeto y de ahi hacer el objeto input.
