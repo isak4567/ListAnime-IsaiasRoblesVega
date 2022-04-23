@@ -7,26 +7,25 @@ class Serie {
 }
 
 function buscaNombre(nombre) {
-
-    if (nombre.length > 1) {
-        const serie = animes.find(obj => obj.nombre.toLowerCase().includes(nombre.toLowerCase()));
-
-        if (serie !== undefined) {
-            return serie;
-        }
+    let serie = animes.filter(obj => obj.nombre.toLowerCase().includes(nombre.toLowerCase()));
+    
+    if (serie !== undefined) {
+        return serie;
     }
-
 }
 
 function filtrarSerie(metodoBusqueda, dato) {
-    let serie;
+    let serie = (metodoBusqueda == 1) ? animes.filter(obj => obj.generos.includes(dato)) : animes.filter(obj => obj.transmision.includes(dato))
 
-    if (metodoBusqueda == 1) {
-        serie = animes.filter(obj => obj.generos.includes(dato));
-    } else {
-        serie = animes.filter(obj => obj.transmision.includes(dato));
-    }
     return serie;
+}
+
+function obtenerIguales(array1, array2) {
+    return array1.filter(obj1 => {
+        return array2.some(obj2 => {
+            return obj1.nombre === obj2.nombre;
+        });
+    });
 }
 
 function Escritor(array, string) {
@@ -34,14 +33,14 @@ function Escritor(array, string) {
 
     for (let i = 0; i < array.length; i++) {
         acumulador +=
-            `<div class="anime ${array[i].nombre.replace(/\s+/g, '')}${string}">
-        <a class="linkAnime" href="#">
-            <div class="animeContenedor">
-                <div class="imagenAnime"></div>
-            </div>
-        </a>
-        <button class="tituloAnime">${array[i].nombre}</button>
-    </div>`;
+        `<div class="anime ${array[i].nombre.replace(/\s+/g, '')}${string}">
+            <a class="linkAnime" href="#">
+                <div class="animeContenedor">
+                    <div class="imagenAnime"></div>
+                </div>
+            </a>
+            <button class="tituloAnime">${array[i].nombre}</button>
+        </div>`;
     }
 
     return acumulador;
@@ -84,27 +83,14 @@ function validarFormulario(e) {
     // el creador de pagina le ponemos que agruegue la clase hideanime a nuestras series
     EscritorPagina(" hideAnime");
 
-    let buscarSerie = buscaNombre(formulario.children[0].children[1].value);
-    // si no hay nombre que buscar, se pone a fijarse que hay para filtrar
-    if (buscarSerie === undefined) {
-        let arraySeriesGenero = filtrarSerie(1, formulario.children[1].children[1].value);
-        let arraySeriesTipo = filtrarSerie(2, formulario.children[2].children[1].value);
-        let arraySeries = [];
-        // mete las series en un nuevo array y le pone otra clase para que se muestre.
-        arraySeriesGenero.forEach(element1 => {
-            arraySeriesTipo.forEach(element2 => {
-                if (element1.nombre === element2.nombre) {
-                    arraySeries.push(element1);
-                    let animeClass = document.querySelector(`.${element1.nombre.replace(/\s+/g, '')}`);
-                    animeClass.className += ` displayAnime`;
-                }
-            });
-        });
+    let arrayGenerosYTipos = obtenerIguales(filtrarSerie(1, formulario.children[1].children[1].value), filtrarSerie(2, formulario.children[2].children[1].value));
 
-    } else {
-        let animeClass = document.querySelector(`.${buscarSerie.nombre.replace(/\s+/g, '')}`);
-        animeClass.className += ` displayAnime`;;
-    }
+    let arraySeries = obtenerIguales(arrayGenerosYTipos, buscaNombre(formulario.children[0].children[1].value));
+
+    arraySeries.forEach(elemento => {
+        let animeClass = document.querySelector(`.${elemento.nombre.replace(/\s+/g, '')}`);
+        animeClass.className += ` displayAnime`;
+    })
 }
 
 let seriesLista = JSON.parse(sessionStorage.getItem("serieLista")) || [];
@@ -113,12 +99,11 @@ function agregarATuLista(e) {
     if ((seriesLista.find(el => el.nombre == e.target.innerHTML)) == undefined) {
         let cartelAgregarSerie = document.querySelector(".cartelAgregarSerie");
 
-        cartelAgregarSerie.className = "cartelAgregarSerie activo";
-        cartelAgregarSerie.innerHTML = `<p>${e.target.innerHTML} a sido agruegada a tu lista </p>`;
+        cartelAgregarSerie.outerHTML = `<div class="cartelAgregarSerie activo"> <p>${e.target.innerHTML} a sido agruegada a tu lista </p> </div>`;
 
         cartelAgregarSerie.addEventListener("animationend", () => cartelAgregarSerie.className = "cartelAgregarSerie");
 
-        seriesLista.push(buscaNombre(e.target.innerHTML));
+        seriesLista.push(animes.find(obj => obj.nombre == e.target.innerHTML));
         sessionStorage.setItem("serieLista", JSON.stringify(seriesLista));
     }
 }

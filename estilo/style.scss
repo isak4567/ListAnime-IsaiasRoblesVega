@@ -228,8 +228,8 @@ main {
     position: fixed;
     left: 0;
     top: 0;
-    bottom: 0;
     right: 0;
+    
     
     p {
         background-color: rgb(44, 44, 44);
@@ -242,6 +242,7 @@ main {
 
 .activo {
     display: flex;
+    height: 200px;
     justify-content: center;
     align-items: center;
     animation: entrar 2s forwards 1;
