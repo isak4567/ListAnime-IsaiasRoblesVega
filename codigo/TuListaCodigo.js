@@ -39,11 +39,11 @@ function escritorLista(array) {
     return InfoPerfil;
 }
 
-function CreadorLista() {
-    let tuLista = JSON.parse(sessionStorage.getItem("serieLista"));
+function creadorLista() {
+    let tuLista = JSON.parse(sessionStorage.getItem("serieLista")) || [];
 
     let tablaCuerpo = document.querySelector(".tablaCuerpo");
-    tablaCuerpo.innerHTML = escritorLista(tuLista);
+    tablaCuerpo.innerHTML = escritorLista(tuLista)? escritorLista(tuLista) : "Lista vacia";
 
     let cancelarSerie = document.querySelectorAll("i");
     cancelarSerie.forEach(el => el.addEventListener("click", borrarDeLista));
@@ -66,7 +66,7 @@ function borrarDeLista(e) {
     eliminar("serieLista",1,e);
     eliminar("notaLista",2,e);
 
-    CreadorLista();
+    creadorLista();
     notaEstrellas();
 }
 
@@ -84,5 +84,5 @@ function notaEstrellas() {
     });
 }
 
-CreadorLista();
+creadorLista();
 notaEstrellas();

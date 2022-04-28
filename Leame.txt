@@ -2,4 +2,8 @@
  la Lista de TuLista no se va mostrar por un dato que mete
  live server al ssesionStorage destruyendo la funcion.
 
- ###Actualizacion: ya funciona.
+ ###Actualizacion: Ya funciona.
+
+ ###Actualizacion: Tuvo en un momento un problema que ya no aparece, 
+ no se que paso pero puede que todavia este ahi.
+ 

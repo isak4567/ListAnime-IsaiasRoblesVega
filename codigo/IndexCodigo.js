@@ -1,10 +1,3 @@
-class Serie {
-    constructor(nombre, generos, transmision) {
-        this.nombre = nombre;
-        this.generos = generos;
-        this.transmision = transmision;
-    }
-}
 
 function buscaNombre(nombre) {
     let serie = animes.filter(obj => obj.nombre.toLowerCase().includes(nombre.toLowerCase()));
@@ -28,15 +21,15 @@ function obtenerIguales(array1, array2) {
     });
 }
 
-function Escritor(array, string) {
+function escritor(array, string) {
     let acumulador = "";
 
     for (let i = 0; i < array.length; i++) {
         acumulador +=
         `<div class="anime ${array[i].nombre.replace(/\s+/g, '')}${string}">
-            <a class="linkAnime" href="#">
+            <a class="linkAnime" href="./paginas/anime.html">
                 <div class="animeContenedor">
-                    <div class="imagenAnime"></div>
+                    <div class="imagenAnime">${array[i].nombre}</div>
                 </div>
             </a>
             <button class="tituloAnime">${array[i].nombre}</button>
@@ -46,31 +39,24 @@ function Escritor(array, string) {
     return acumulador;
 }
 
-function EscritorPagina(agregarClase) {
+function escritorPagina(agregarClase) {
     let contenedorSerie = document.querySelector(".contenedorSeries");
-    contenedorSerie.innerHTML = Escritor(animes, agregarClase);
+    contenedorSerie.innerHTML = escritor(animes, agregarClase);
 
     let botonSerie = document.querySelectorAll(".tituloAnime");
     botonSerie.forEach(element => element.addEventListener("click", agregarATuLista));
 
     let imagenSerie = document.querySelectorAll(".imagenAnime");
+    imagenSerie.forEach(el => el.addEventListener("mousedown", linkEvento));
+
     for (let i = 0; i < imagenSerie.length; i++) {
-        imagenSerie[i].className += ` imagenAnime${i+1}`;
+        imagenSerie[i].className += ` anime${i+1}`;
     }
 }
 
-let animes = [
-    new Serie("Naruto Shippuden", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
-    new Serie("Dragon Ball Super", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
-    new Serie("Shrek 2", ["Todos", "Accion", "Comedia"], ["Todos", "Pelicula"]),
-    new Serie("Boku no p", ["Todos", "Romance", "Misterio"], ["Todos", "Pelicula"]),
-    new Serie("Hellsing Ultimate", ["Todos", "Accion"], ["Todos", "Ova"]),
-    new Serie("Soul Eater", ["Todos", "Accion", "Aventura", "Fantasia"], ["Todos", "Tv"]),
-    new Serie("Nichijou", ["Todos", "Comedia"], ["Todos", "Tv"]),
-    new Serie("Gintama", ["Todos", "Comedia", "Fantasia"], ["Todos", "Tv"]),
-    new Serie("Evangelion", ["Todos", "Accion", "Drama"], ["Todos", "Tv"]),
-    new Serie("Kino Journey", ["Todos", "Aventura", "Fantasia"], ["Todos", "Tv"])
-];
+function linkEvento(e) {
+    localStorage.setItem("SerieACrear",JSON.stringify([e.target.innerHTML,e.target.className.split(" ")]));
+}
 
 let formularioFiltro = document.querySelector(".formulario");
 formularioFiltro.addEventListener("submit", validarFormulario);
@@ -81,7 +67,7 @@ function validarFormulario(e) {
 
     let formulario = e.target;
     // el creador de pagina le ponemos que agruegue la clase hideanime a nuestras series
-    EscritorPagina(" hideAnime");
+    escritorPagina(" hideAnime");
 
     let arrayGenerosYTipos = obtenerIguales(filtrarSerie(1, formulario.children[1].children[1].value), filtrarSerie(2, formulario.children[2].children[1].value));
 
@@ -93,19 +79,6 @@ function validarFormulario(e) {
     })
 }
 
-let seriesLista = JSON.parse(sessionStorage.getItem("serieLista")) || [];
-// Guarda cada serie en sessionStorage para ser usado en TuLista y muestra un cartel de agregado
-function agregarATuLista(e) {
-    if ((seriesLista.find(el => el.nombre == e.target.innerHTML)) == undefined) {
-        let cartelAgregarSerie = document.querySelector(".cartelAgregarSerie");
+elegirTarget(1);
 
-        cartelAgregarSerie.outerHTML = `<div class="cartelAgregarSerie activo"> <p>${e.target.innerHTML} a sido agruegada a tu lista </p> </div>`;
-
-        cartelAgregarSerie.addEventListener("animationend", () => cartelAgregarSerie.className = "cartelAgregarSerie");
-
-        seriesLista.push(animes.find(obj => obj.nombre == e.target.innerHTML));
-        sessionStorage.setItem("serieLista", JSON.stringify(seriesLista));
-    }
-}
-
-EscritorPagina("");
+escritorPagina("");

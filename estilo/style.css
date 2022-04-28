@@ -3,9 +3,12 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 /* ############# Variables ############# */
+/* ############# Mixin ############# */
 @font-face {
   font-family: "Fantasy-One";
   src: url("../letra/Fantasy-One.ttf.eot");
@@ -42,6 +45,7 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#740081), to(#b247ff));
   background: linear-gradient(#740081, #b247ff);
   -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* ############# Navegador ############# */
@@ -59,7 +63,6 @@ body {
 }
 
 .navegador ul {
-  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,7 +83,6 @@ body {
 }
 
 .navegador ul li a {
-  text-decoration: none;
   background: -webkit-gradient(linear, left top, left bottom, from(#300083), to(#2b40ff));
   background: linear-gradient(#300083, #2b40ff);
   -webkit-background-clip: text;
@@ -189,59 +191,139 @@ main {
   width: 98%;
   height: 96%;
   margin: 3px auto 0px auto;
+  color: transparent;
   border-radius: 15px;
   background-size: cover;
   background-position: bottom;
 }
 
-.imagenAnime1 {
+.anime1 {
   background-image: url(../imagenes/anime1.jpg);
 }
 
-.imagenAnime2 {
+.anime2 {
   background-image: url(../imagenes/anime2.jpg);
 }
 
-.imagenAnime3 {
+.anime3 {
   background-image: url(../imagenes/anime3.jpg);
 }
 
-.imagenAnime4 {
+.anime4 {
   background-image: url(../imagenes/anime4.jpg);
 }
 
-.imagenAnime5 {
+.anime5 {
   background-image: url(../imagenes/anime5.jpg);
 }
 
-.imagenAnime6 {
+.anime6 {
   background-image: url(../imagenes/anime6.jpg);
 }
 
-.imagenAnime7 {
+.anime7 {
   background-image: url(../imagenes/anime7.jpg);
 }
 
-.imagenAnime8 {
+.anime8 {
   background-image: url(../imagenes/anime8.jpg);
 }
 
-.imagenAnime9 {
+.anime9 {
   background-image: url(../imagenes/anime9.jpg);
 }
 
-.imagenAnime10 {
+.anime10 {
   background-image: url(../imagenes/anime10.jpg);
 }
 
-.tituloAnime {
+.anime11 {
+  background-image: url(../imagenes/anime11.jpg);
+}
+
+.anime12 {
+  background-image: url(../imagenes/anime12.jpg);
+}
+
+.anime13 {
+  background-image: url(../imagenes/anime13.jpg);
+}
+
+.anime14 {
+  background-image: url(../imagenes/anime14.jpg);
+}
+
+.anime15 {
+  background-image: url(../imagenes/anime15.jpg);
+}
+
+.anime16 {
+  background-image: url(../imagenes/anime16.jpg);
+}
+
+.anime17 {
+  background-image: url(../imagenes/anime17.jpg);
+}
+
+.anime18 {
+  background-image: url(../imagenes/anime18.jpg);
+}
+
+.anime19 {
+  background-image: url(../imagenes/anime19.jpg);
+}
+
+.anime20 {
+  background-image: url(../imagenes/anime20.jpg);
+}
+
+.anime21 {
+  background-image: url(../imagenes/anime21.jpg);
+}
+
+.anime22 {
+  background-image: url(../imagenes/anime22.jpg);
+}
+
+.anime23 {
+  background-image: url(../imagenes/anime23.jpg);
+}
+
+.anime24 {
+  background-image: url(../imagenes/anime24.jpg);
+}
+
+.anime25 {
+  background-image: url(../imagenes/anime25.jpg);
+}
+
+.anime26 {
+  background-image: url(../imagenes/anime26.jpg);
+}
+
+.anime27 {
+  background-image: url(../imagenes/anime27.jpg);
+}
+
+.anime28 {
+  background-image: url(../imagenes/anime28.jpg);
+}
+
+.anime29 {
+  background-image: url(../imagenes/anime29.jpg);
+}
+
+.anime30 {
+  background-image: url(../imagenes/anime30.jpg);
+}
+
+.tituloAnime, .ladoIzquierdo span, .tuReview input {
   width: 100%;
   padding: 6%;
   border-radius: 2px 2px 15px 15px;
   margin: -20px auto 0 auto;
   display: block;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#333));
-  background: linear-gradient(#eee, #333);
+  background: #090909;
   text-align: center;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -253,17 +335,15 @@ main {
   transition: all 0.5s;
 }
 
-.tituloAnime:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#767676));
-  background: linear-gradient(#dfdfdf, #767676);
-  color: orangered;
+.tituloAnime:hover, .ladoIzquierdo span:hover, .tuReview input:hover {
+  background: #1d1d1d;
+  color: #ff5500;
 }
 
-.tituloAnime:active {
+.tituloAnime:active, .ladoIzquierdo span:active, .tuReview input:active {
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.54);
           box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.54);
-  background: -webkit-gradient(linear, left top, left bottom, from(lightgray), to(#424242));
-  background: linear-gradient(lightgray, #424242);
+  background: #040404;
   color: orange;
 }
 
@@ -462,5 +542,148 @@ td {
 
 .botonesCancelar i:hover {
   color: #ff28ed;
+}
+
+/* ############# Anime ############# */
+.AnimePrincipal {
+  background-size: cover;
+  background-position: center;
+}
+
+.AnimeInformacionPrincipal {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2% 5%;
+  background-color: rgba(0, 0, 0, 0.855);
+}
+
+.ladoIzquierdo {
+  width: 60%;
+  max-height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ladoIzquierdo .imagenColorFondo {
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+  background: linear-gradient(225deg, #0b3cbf 0%, #ff4000 50%, #DED700 100%);
+  padding: 4px;
+}
+
+.ladoIzquierdo .imagenColorFondo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.ladoIzquierdo span {
+  width: 90.5%;
+  padding: 8px 4px;
+}
+
+.ladoDerecho {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-left: 30px;
+  color: #2b40ff;
+}
+
+.ladoDerecho h1 {
+  font-size: 2.5em;
+  color: #ff6b35;
+  padding-bottom: 40px;
+  font-family: "Fantasy-One";
+}
+
+.sinopsis h2 {
+  font-size: 1.8em;
+  padding-bottom: 20px;
+}
+
+.sinopsis p {
+  color: white;
+  font-size: 1.2em;
+  padding-bottom: 40px;
+}
+
+.informacionSerie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.informacionSerie h3 {
+  font-size: 1.6em;
+}
+
+.informacionSerie div {
+  width: 100%;
+}
+
+.informacionSerie div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.informacionSerie div ul li {
+  color: white;
+  text-align: center;
+  margin: 10px;
+  padding: 3px 5px;
+  font-size: 1.3em;
+  background-color: #ff4400;
+  border-radius: 5px;
+}
+
+.informacionGenero {
+  width: 90% !important;
+}
+
+.tuReview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 95.5%;
+  margin: 20px 0;
+}
+
+.tuReview label {
+  font-size: 1.3em;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
+.tuReview textarea {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.tuReview input {
+  padding: 1%;
 }
 /*# sourceMappingURL=style.css.map */
