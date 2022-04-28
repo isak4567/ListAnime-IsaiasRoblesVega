@@ -40,7 +40,7 @@ function escritorLista(array) {
 }
 
 function creadorLista() {
-    let tuLista = JSON.parse(sessionStorage.getItem("serieLista")) || [];
+    let tuLista = JSON.parse(localStorage.getItem("serieLista")) || [];
 
     let tablaCuerpo = document.querySelector(".tablaCuerpo");
     tablaCuerpo.innerHTML = escritorLista(tuLista)? escritorLista(tuLista) : "Lista vacia";
@@ -48,19 +48,12 @@ function creadorLista() {
     let cancelarSerie = document.querySelectorAll("i");
     cancelarSerie.forEach(el => el.addEventListener("click", borrarDeLista));
 
-    if (sessionStorage.getItem("notaLista") !== null) {
-        let notaLista = JSON.parse(sessionStorage.getItem("notaLista"));
+    if (localStorage.getItem("notaLista") !== null) {
+        let notaLista = JSON.parse(localStorage.getItem("notaLista"));
 
         notaLista.forEach(element => document.getElementById(element).checked = true);
     }
 }
-
- const eliminar = (itemStorage,num,e) => {
-    let array = JSON.parse(sessionStorage.getItem(itemStorage)) || [];
-    array = (num == 1) ? array.filter(el => el.nombre !== e.target.id) : array.filter(el => !(el.includes(e.target.id.replace(/\s+/g, ''))));
-
-    sessionStorage.setItem(itemStorage, JSON.stringify(array));
- }
 
 function borrarDeLista(e) {
     eliminar("serieLista",1,e);
@@ -71,7 +64,7 @@ function borrarDeLista(e) {
 }
 
 function notaEstrellas() {
-    let notaLista = JSON.parse(sessionStorage.getItem("notaLista")) || [];
+    let notaLista = JSON.parse(localStorage.getItem("notaLista")) || [];
 
     let inputStar = document.querySelectorAll(`input`);
 
@@ -79,7 +72,7 @@ function notaEstrellas() {
 
         element.onclick = (e) => {
             notaLista.push(e.target.id);
-            sessionStorage.setItem("notaLista", JSON.stringify(notaLista));
+            localStorage.setItem("notaLista", JSON.stringify(notaLista));
         };
     });
 }

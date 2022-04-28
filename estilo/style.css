@@ -167,7 +167,7 @@ main {
 }
 
 .hideAnime {
-  display: none;
+  display: none !important;
 }
 
 .displayAnime {
@@ -561,7 +561,7 @@ td {
 
 .ladoIzquierdo {
   width: 60%;
-  max-height: 600px;
+  height: 630px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -613,12 +613,16 @@ td {
   font-family: "Fantasy-One";
 }
 
-.sinopsis h2 {
+.ladoDerecho h2 {
   font-size: 1.8em;
   padding-bottom: 20px;
 }
 
-.sinopsis p {
+.ladoDerecho h3 {
+  font-size: 1.6em;
+}
+
+.ladoDerecho p {
   color: white;
   font-size: 1.2em;
   padding-bottom: 40px;
@@ -628,10 +632,6 @@ td {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.informacionSerie h3 {
-  font-size: 1.6em;
 }
 
 .informacionSerie div {
@@ -644,6 +644,7 @@ td {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-bottom: 30px;
 }
 
 .informacionSerie div ul li {
@@ -685,5 +686,23 @@ td {
 
 .tuReview input {
   padding: 1%;
+}
+
+.borrarReview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.borrarReview i {
+  font-size: 1.8em;
+  padding-bottom: 20px;
+}
+
+.borrarReview i:hover {
+  color: #b247ff;
 }
 /*# sourceMappingURL=style.css.map */

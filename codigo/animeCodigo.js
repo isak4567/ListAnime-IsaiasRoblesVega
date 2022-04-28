@@ -29,3 +29,51 @@ elegirTarget(2);
 let objetoPagina = animes.find(el => el.nombre == agregarbtn.className);
 
 creadorSerie(objetoPagina);
+
+function creadorReview() {
+    animeForm.addEventListener("submit", addReview);
+
+    let reseña = (review.find(el => el[0] == objetoPagina.nombre));
+    reseña && escritorReview(reseña[0],reseña[1]);
+}
+
+function addReview(e) {
+    e.preventDefault();
+
+    review = JSON.parse(localStorage.getItem("reviews")) || []
+
+    console.log(review.find(el => el[0] == objetoPagina.nombre));
+
+    if ((review.find(el => el[0] == objetoPagina.nombre)) == undefined) {
+        review.push([objetoPagina.nombre, e.target.children[1].value]);
+        localStorage.setItem("reviews", JSON.stringify(review));
+
+        escritorReview(objetoPagina.nombre, e.target.children[1].value);
+    }
+}
+
+function escritorReview (nombre,review){
+    tuReview.innerHTML =
+        `<div class="borrarReview"> 
+            <h2> Tu Review </h2> 
+            <i class="fa fa-times" id="${nombre.replace(/\s+/g, '')}-eliminar"></i> 
+        </div>
+        <p>${review}</p>`;
+
+    document.querySelector(`#${nombre.replace(/\s+/g, '')}-eliminar`).addEventListener("click", eliminarReview);
+
+    animeForm.classList.add("hideAnime");
+}
+
+function eliminarReview(e) {
+    eliminar("reviews",3,e);
+
+    tuReview.innerHTML = "";
+    animeForm.className = "tuReview";
+}
+
+let review = JSON.parse(localStorage.getItem("reviews")) || [];
+let animeForm = document.querySelector(".tuReview");
+let tuReview = document.querySelector(".serieReview");
+
+creadorReview();

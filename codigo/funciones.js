@@ -1,11 +1,11 @@
-let num = 0;
-const elegirTarget = number => num = number;
+let numeroAgregar = 0;
+const elegirTarget = number => numeroAgregar = number;
 
 // Guarda cada serie en sessionStorage para ser usado en TuLista y muestra un cartel de agregado
 function agregarATuLista(e) {
-    let seriesLista = JSON.parse(sessionStorage.getItem("serieLista")) || [];
+    let seriesLista = JSON.parse(localStorage.getItem("serieLista")) || [];
 
-    let busqueda = (num == 1)? e.target.innerHTML : e.target.className;
+    let busqueda = (numeroAgregar == 1)? e.target.innerHTML : e.target.className;
 
     if ((seriesLista.find(el => el.nombre == busqueda)) == undefined) {
         let cartelAgregarSerie = document.querySelector(".cartelAgregarSerie");
@@ -15,6 +15,18 @@ function agregarATuLista(e) {
         cartelAgregarSerie.addEventListener("animationend", () => cartelAgregarSerie.className = "cartelAgregarSerie");
 
         seriesLista.push(animes.find(obj => obj.nombre == busqueda));
-        sessionStorage.setItem("serieLista", JSON.stringify(seriesLista));
+        localStorage.setItem("serieLista", JSON.stringify(seriesLista));
     }
 }
+
+const eliminar = (itemStorage,num,e) => {  
+    let array = JSON.parse(localStorage.getItem(itemStorage)) || [];
+
+    let dato = num == 3 ? e.target.id.split("-") : "";
+    
+    array = (num == 1) ? array.filter(el => el.nombre !== e.target.id) 
+    : ((num == 2) ? array.filter(el => !(el.includes(e.target.id.replace(/\s+/g, ''))))
+    : array.filter(el => !(el[0].replace(/\s+/g, '').includes(dato[0]))));
+
+    localStorage.setItem(itemStorage, JSON.stringify(array));
+ }

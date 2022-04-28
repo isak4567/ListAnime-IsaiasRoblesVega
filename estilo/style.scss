@@ -136,7 +136,7 @@ main {
 }
 
 .hideAnime {
-    display: none;
+    display: none !important;
 }
 
 .displayAnime {
@@ -365,7 +365,7 @@ td {
 
 .ladoIzquierdo {
     width: 60%;
-    max-height: 600px;
+    height: 630px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -404,12 +404,12 @@ td {
         padding-bottom: 40px;
         font-family: $Font1;
     }
-}
-
-.sinopsis {
     h2 {
         font-size: 1.8em;
         padding-bottom: 20px;
+    }
+    h3 {
+        font-size: 1.6em;
     }
     p {
         color: white;
@@ -420,14 +420,12 @@ td {
 
 .informacionSerie {
     display: flex;
-    h3 {
-        font-size: 1.6em;
-    }
     div {
         width: 100%;
         ul {
             display: flex;
             flex-wrap: wrap;
+            padding-bottom: 30px;
 
             li {
                 color: white;
@@ -467,5 +465,17 @@ td {
     input {
         @extend .tituloAnime;
         padding: 1%;
+    }
+}
+
+.borrarReview {
+    display: flex;
+    justify-content: space-between;
+    i {
+        font-size: 1.8em;
+        padding-bottom: 20px;
+        &:hover {
+            color: $Violeta2;
+        }
     }
 }
