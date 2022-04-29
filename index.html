@@ -6,14 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ListAnime</title>
-
+    <link rel="stylesheet" href="./estilo/style.css">
 </head>
 
 <body>
     <!--############ Encabezado ############-->
     <header class="encabezado">
-
-
+        <a href="#">
+            <h1 class="logo"><span>List</span>Anime</h1>
+        </a>
+        <!--############ Navegador ############-->
+        <nav class="navegador">
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./paginas/tuLista.html"><span>Tu</span>Lista</a></li>
+            </ul>
+        </nav>
 
     </header>
     <!--############ Contenido Prncipal ############-->
@@ -21,8 +29,7 @@
 
         <div class="InformacionPrincipal">
             <h2>Buscador de Series</h2>
-            <p>Haz clic sobre el nombre de la serie para agregar a tu lista o click en la imagen para ver su
-                información.</p>
+            <p>Haz clic sobre el nombre de la serie para agregar a tu lista o click en la imagen para ver su información.</p>
         </div>
 
         <!--############ Formulario de Busqueda ############-->
@@ -75,7 +82,9 @@
     <!--############ Cartel Agregar ############-->
     <div class="cartelAgregarSerie"></div>
     <!--############ Codigo ############-->
-    
+    <script src="./codigo/objetos.js"></script>
+    <script src="./codigo/funciones.js"></script>
+    <script src="./codigo/main.js"></script>
 </body>
 
 </html>

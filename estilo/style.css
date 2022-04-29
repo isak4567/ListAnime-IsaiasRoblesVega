@@ -1,0 +1,648 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* ############# Variables ############# */
+/* ############# Mixin ############# */
+@font-face {
+  font-family: "Fantasy-One";
+  src: url("../letra/Fantasy-One.ttf.eot");
+  src: url("../letra/Fantasy-One.ttf.woff") format("woff");
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#141414), color-stop(20%, #303030), color-stop(40%, #141414), color-stop(60%, #303030), color-stop(80%, #141414), to(#303030));
+  background: linear-gradient(#141414 0%, #303030 20%, #141414 40%, #303030 60%, #141414 80%, #303030 100%);
+  color: white;
+}
+
+/* ############# Encabezado ############# */
+.encabezado {
+  width: 100%;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo {
+  font-size: 3em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#300083), to(#2b40ff));
+  background: linear-gradient(#300083, #2b40ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.logo span {
+  background: -webkit-gradient(linear, left top, left bottom, from(#740081), to(#b247ff));
+  background: linear-gradient(#740081, #b247ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ############# Navegador ############# */
+.navegador {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navegador ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+.navegador ul li {
+  font-size: 2em;
+  width: 100%;
+}
+
+.navegador ul li span {
+  background: -webkit-gradient(linear, left top, left bottom, from(#740081), to(#b247ff));
+  background: linear-gradient(#740081, #b247ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navegador ul li a {
+  background: -webkit-gradient(linear, left top, left bottom, from(#300083), to(#2b40ff));
+  background: linear-gradient(#300083, #2b40ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navegador ul li a:hover {
+  color: #ff28ed;
+}
+
+/* ############# Index Contenido Principal ############# */
+main {
+  min-height: 80vh;
+}
+
+.InformacionPrincipal {
+  text-align: center;
+  font-family: "Fantasy-One";
+}
+
+.InformacionPrincipal h2 {
+  font-size: 2em;
+}
+
+.InformacionPrincipal p {
+  font-size: 1.2em;
+}
+
+/* ############# Index Seccion Formulario Busqueda ############# */
+.formulario {
+  padding-top: 40px;
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: "Fantasy-One";
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.form-group input,
+.form-group select {
+  width: 186px;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* ############# Index Seccion Series ############# */
+.contenedorSeries {
+  width: 90%;
+  padding: 0px 4%;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.anime {
+  margin-top: 20px;
+  width: 204px;
+  height: 348px;
+  border-radius: 15px;
+}
+
+.hideAnime {
+  display: none !important;
+}
+
+.displayAnime {
+  display: initial !important;
+}
+
+.linkAnime {
+  width: 100%;
+  height: 100%;
+}
+
+.animeContenedor {
+  width: 100%;
+  height: 90%;
+  padding-top: 5px;
+  border-radius: 15px;
+  background: linear-gradient(225deg, #0b3cbf 0%, #ff4000 50%, #DED700 100%);
+}
+
+.imagenAnime {
+  width: 98%;
+  height: 96%;
+  margin: 3px auto 0px auto;
+  color: transparent;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.anime1 {
+  background-image: url(../imagenes/anime1.jpg);
+}
+
+.anime2 {
+  background-image: url(../imagenes/anime2.jpg);
+}
+
+.anime3 {
+  background-image: url(../imagenes/anime3.jpg);
+}
+
+.anime4 {
+  background-image: url(../imagenes/anime4.jpg);
+}
+
+.anime5 {
+  background-image: url(../imagenes/anime5.jpg);
+}
+
+.anime6 {
+  background-image: url(../imagenes/anime6.jpg);
+}
+
+.anime7 {
+  background-image: url(../imagenes/anime7.jpg);
+}
+
+.anime8 {
+  background-image: url(../imagenes/anime8.jpg);
+}
+
+.anime9 {
+  background-image: url(../imagenes/anime9.jpg);
+}
+
+.anime10 {
+  background-image: url(../imagenes/anime10.jpg);
+}
+
+.anime11 {
+  background-image: url(../imagenes/anime11.jpg);
+}
+
+.anime12 {
+  background-image: url(../imagenes/anime12.jpg);
+}
+
+.anime13 {
+  background-image: url(../imagenes/anime13.jpg);
+}
+
+.anime14 {
+  background-image: url(../imagenes/anime14.jpg);
+}
+
+.anime15 {
+  background-image: url(../imagenes/anime15.jpg);
+}
+
+.tituloAnime, .ladoIzquierdo span, .tuReview input {
+  width: 100%;
+  padding: 6%;
+  border-radius: 2px 2px 15px 15px;
+  margin: -20px auto 0 auto;
+  display: block;
+  background: #090909;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  border-width: 0px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.tituloAnime:hover, .ladoIzquierdo span:hover, .tuReview input:hover {
+  background: #1d1d1d;
+  color: #ff5500;
+}
+
+.tituloAnime:active, .ladoIzquierdo span:active, .tuReview input:active {
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.54);
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.54);
+  background: #040404;
+  color: orange;
+}
+
+/* ############# Pie de Pagina ############# */
+.pieDePagina {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+.tituloFooter {
+  font-size: 2em;
+  padding-bottom: 10px;
+}
+
+.cartelAgregarSerie {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.cartelAgregarSerie p {
+  background-color: #2c2c2c;
+  font: 800 20px "Fantasy-One";
+  color: #ff6e39;
+  border: 3px double #b247ff;
+  padding: 2%;
+}
+
+.activo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: entrar 2s forwards 1;
+          animation: entrar 2s forwards 1;
+  opacity: 0;
+}
+
+@-webkit-keyframes entrar {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50vh);
+            transform: translateY(-50vh);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-50vh);
+            transform: translateY(-50vh);
+  }
+}
+
+@keyframes entrar {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50vh);
+            transform: translateY(-50vh);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-50vh);
+            transform: translateY(-50vh);
+  }
+}
+
+/* ############# Tu Lista Tabla ############# */
+.h2Lista {
+  font-size: 2em;
+  margin: 60px auto;
+}
+
+.listaSeriesTabla {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tabla {
+  width: 1000px;
+  margin: 30px 0px 30px 0px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+.tablaCabeza {
+  font-family: "Fantasy-One";
+  font-size: 1.8em;
+  color: orangered;
+  font-weight: 800;
+}
+
+.tablaCuerpo {
+  font-weight: 800;
+  font-size: 1.4em;
+}
+
+.fila {
+  border-top: 2px groove blue;
+}
+
+.fila:nth-child(even) {
+  color: #dfd7ab;
+}
+
+.fila:hover {
+  color: #ff28ed;
+  -webkit-box-shadow: 0px 0px 2px 2px #ff28ed;
+          box-shadow: 0px 0px 2px 2px #ff28ed;
+}
+
+.rating-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.rating-group input {
+  display: none;
+}
+
+.rating-group label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 1em;
+  color: #303030;
+}
+
+.rating-group input:checked ~ label span {
+  color: #2b40ff;
+}
+
+.rating-group:hover label span {
+  color: #b247ff;
+}
+
+.rating-group input:hover ~ label span {
+  color: #ff28ed;
+}
+
+.botonesCancelar {
+  padding-top: 83px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.botonesCancelar i {
+  padding-bottom: 8px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.botonesCancelar i:hover {
+  color: #ff28ed;
+}
+
+/* ############# Anime ############# */
+.AnimePrincipal {
+  background-size: cover;
+  background-position: center;
+}
+
+.AnimeInformacionPrincipal {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2% 5%;
+  background-color: rgba(0, 0, 0, 0.855);
+}
+
+.ladoIzquierdo {
+  width: 60%;
+  height: 630px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ladoIzquierdo .imagenColorFondo {
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+  background: linear-gradient(225deg, #0b3cbf 0%, #ff4000 50%, #DED700 100%);
+  padding: 4px;
+}
+
+.ladoIzquierdo .imagenColorFondo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.ladoIzquierdo span {
+  width: 90.5%;
+  padding: 8px 4px;
+}
+
+.ladoDerecho {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-left: 30px;
+  color: #2b40ff;
+}
+
+.ladoDerecho h1 {
+  font-size: 2.5em;
+  color: #ff6b35;
+  padding-bottom: 40px;
+  font-family: "Fantasy-One";
+}
+
+.ladoDerecho h2 {
+  font-size: 1.8em;
+  padding-bottom: 20px;
+}
+
+.ladoDerecho h3 {
+  font-size: 1.6em;
+}
+
+.ladoDerecho p {
+  color: white;
+  font-size: 1.2em;
+  padding-bottom: 40px;
+}
+
+.informacionSerie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.informacionSerie div {
+  width: 100%;
+}
+
+.informacionSerie div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 30px;
+}
+
+.informacionSerie div ul li {
+  color: white;
+  text-align: center;
+  margin: 10px;
+  padding: 3px 5px;
+  font-size: 1.3em;
+  background-color: #ff4400;
+  border-radius: 5px;
+}
+
+.informacionGenero {
+  width: 90% !important;
+}
+
+.tuReview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 95.5%;
+  margin: 20px 0;
+}
+
+.tuReview label {
+  font-size: 1.3em;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
+.tuReview textarea {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.tuReview input {
+  padding: 1%;
+}
+
+.borrarReview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.borrarReview i {
+  font-size: 1.8em;
+  padding-bottom: 20px;
+}
+
+.borrarReview i:hover {
+  color: #b247ff;
+}
+/*# sourceMappingURL=style.css.map */
