@@ -171,7 +171,7 @@ main {
 }
 
 .displayAnime {
-  display: initial;
+  display: initial !important;
 }
 
 .linkAnime {
