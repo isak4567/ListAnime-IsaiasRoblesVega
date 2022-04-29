@@ -166,7 +166,7 @@ main {
     background-position: bottom;
 }
 // imagenes de las series
-@for $i from 1 through 30 {
+@for $i from 1 through 15 {
     .anime#{$i} {
         background-image: url(../imagenes/anime#{$i}.jpg);
     }
