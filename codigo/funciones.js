@@ -8,11 +8,11 @@ function agregarATuLista(e) {
     let busqueda = (numeroAgregar == 1)? e.target.innerHTML : e.target.className;
 
     if ((seriesLista.find(el => el.nombre == busqueda)) == undefined) {
-        let cartelAgregarSerie = document.querySelector(".cartelAgregarSerie");
+        let cartelAgregarSerie = $(".cartelAgregarSerie");
 
-        cartelAgregarSerie.outerHTML = `<div class="cartelAgregarSerie activo"> <p>${busqueda} a sido agruegada a tu lista </p> </div>`;
+        cartelAgregarSerie[0].outerHTML = `<div class="cartelAgregarSerie activo"> <p>${busqueda} a sido agruegada a tu lista </p> </div>`;
 
-        cartelAgregarSerie.addEventListener("animationend", () => cartelAgregarSerie.className = "cartelAgregarSerie");
+        cartelAgregarSerie.on("animationend", () => cartelAgregarSerie.removeClass("cartelAgregarSerie"));
 
         seriesLista.push(animes.find(obj => obj.nombre == busqueda));
         localStorage.setItem("serieLista", JSON.stringify(seriesLista));

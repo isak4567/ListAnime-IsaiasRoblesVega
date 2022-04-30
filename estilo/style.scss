@@ -335,16 +335,24 @@ td {
 }
 // ########## Tu Lista BotonCancelar ##########
 .botonesCancelar {
-    padding-top: 83px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    span {
+        font-size: 50px;
+        color: $Azul2;
+        cursor: pointer;
+        padding-bottom: 2px;
+        &:hover {
+            color: $Rosa1;
+        }
+    }
     i {
         padding-bottom: 8px;
         color: rgb(255, 255, 255);
         font-size: 40px;
         cursor: pointer;
-
         &:hover {
             color: $Rosa1;
         }

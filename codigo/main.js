@@ -40,14 +40,12 @@ function escritor(array, string) {
 }
 
 function escritorPagina(agregarClase) {
-    let contenedorSerie = document.querySelector(".contenedorSeries");
-    contenedorSerie.innerHTML = escritor(animes, agregarClase);
+    $(".contenedorSeries").html(escritor(animes, agregarClase));
 
-    let botonSerie = document.querySelectorAll(".tituloAnime");
-    botonSerie.forEach(element => element.addEventListener("click", agregarATuLista));
+   $(".tituloAnime").click(agregarATuLista);
 
-    let imagenSerie = document.querySelectorAll(".imagenAnime");
-    imagenSerie.forEach(el => el.addEventListener("mousedown", linkEvento));
+    let imagenSerie = $(".imagenAnime");
+    imagenSerie.mousedown(linkEvento);
 
     for (let i = 0; i < imagenSerie.length; i++) {
         imagenSerie[i].className += ` anime${i+1}`;
@@ -58,8 +56,7 @@ function linkEvento(e) {
     localStorage.setItem("SerieACrear",JSON.stringify([e.target.innerHTML,e.target.className.split(" ")]));
 }
 
-let formularioFiltro = document.querySelector(".formulario");
-formularioFiltro.addEventListener("submit", validarFormulario);
+$(".formulario").submit(validarFormulario);
 
 // validarFormulario: al tocar el filtrar la pagina se crea de vuelta y esconde todos sus items que no esten buscados.
 function validarFormulario(e) {
@@ -74,8 +71,7 @@ function validarFormulario(e) {
     let arraySeries = obtenerIguales(arrayGenerosYTipos, buscaNombre(formulario.children[0].children[1].value));
 
     arraySeries.forEach(elemento => {
-        let animeClass = document.querySelector(`.${elemento.nombre.replace(/\s+/g, '')}`);
-        animeClass.className += ` displayAnime`;
+        $(`.${elemento.nombre.replace(/\s+/g, '')}`).addClass(`displayAnime`);
     })
 }
 

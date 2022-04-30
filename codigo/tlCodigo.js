@@ -2,12 +2,12 @@ function escritorLista(array) {
     let InfoPerfil = "";
     let i = 1;
     let divBtnCancelar = document.querySelector(".botonesCancelar");
-    divBtnCancelar.innerHTML = "";
+    divBtnCancelar.innerHTML = `<span class="borrarTodo fa fa-times"></span>`;
 
     array.forEach(element => {
         let nombreResumido = element.nombre.replace(/\s+/g, '');
         InfoPerfil +=
-        `<tr class="fila"> 
+            `<tr class="fila"> 
             <td>${element.nombre}</td>
             <td>${element.generos.slice(1).join(" - ")}</td>
             <td>${element.transmision[1]}</td>
@@ -42,11 +42,17 @@ function escritorLista(array) {
 function creadorLista() {
     let tuLista = JSON.parse(localStorage.getItem("serieLista")) || [];
 
-    let tablaCuerpo = document.querySelector(".tablaCuerpo");
-    tablaCuerpo.innerHTML = escritorLista(tuLista)? escritorLista(tuLista) : "Lista vacia";
+    $(".tablaCuerpo").html(escritorLista(tuLista) ? escritorLista(tuLista) : "Lista vacia");
 
-    let cancelarSerie = document.querySelectorAll("i");
-    cancelarSerie.forEach(el => el.addEventListener("click", borrarDeLista));
+    $("i").click(borrarDeLista);
+
+    $(".botonesCancelar span").click(() => {
+        localStorage.removeItem("serieLista");
+        localStorage.removeItem("notaLista");
+
+        creadorLista();
+        notaEstrellas();
+    });
 
     if (localStorage.getItem("notaLista") !== null) {
         let notaLista = JSON.parse(localStorage.getItem("notaLista"));
@@ -56,8 +62,8 @@ function creadorLista() {
 }
 
 function borrarDeLista(e) {
-    eliminar("serieLista",1,e);
-    eliminar("notaLista",2,e);
+    eliminar("serieLista", 1, e);
+    eliminar("notaLista", 2, e);
 
     creadorLista();
     notaEstrellas();
@@ -66,14 +72,9 @@ function borrarDeLista(e) {
 function notaEstrellas() {
     let notaLista = JSON.parse(localStorage.getItem("notaLista")) || [];
 
-    let inputStar = document.querySelectorAll(`input`);
-
-    inputStar.forEach(element => {
-
-        element.onclick = (e) => {
-            notaLista.push(e.target.id);
-            localStorage.setItem("notaLista", JSON.stringify(notaLista));
-        };
+    $(`input`).click((e) => {
+        notaLista.push(e.target.id);
+        localStorage.setItem("notaLista", JSON.stringify(notaLista));
     });
 }
 
