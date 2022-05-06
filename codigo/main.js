@@ -85,7 +85,8 @@ let animes = [];
 
 const llamarDatos = async () => {
     try {
-        let respuesta = await fetch('../Json/datos.json');
+        let respuesta = await fetch('./listaAnime.json',{mode: 'no-cors'});
+        console.log(respuesta);
         let resultado = await respuesta.json();
         animes = resultado;
         escritorPagina("");
