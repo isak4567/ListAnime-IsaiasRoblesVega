@@ -75,7 +75,7 @@ let objetoPagina = 0;
 // llamo los datos.json y los guardo en una variable, despues inicio mi pagina
 const llamarDatos = async () => {
     try {
-        let respuesta = await fetch('../listaAnime.json');
+        let respuesta = await fetch('https://raw.githubusercontent.com/isak4567/ListAnime-IsaiasRoblesVega/master/listaAnime.json');
         let resultado = await respuesta.json();
 
         animes = resultado;
