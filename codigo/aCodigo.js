@@ -75,10 +75,12 @@ let objetoPagina = 0;
 // llamo los datos.json y los guardo en una variable, despues inicio mi pagina
 const llamarDatos = async () => {
     try {
-        let respuesta = await fetch('../Json/datos.json');
+        let respuesta = await fetch('../listaAnime.json');
         let resultado = await respuesta.json();
+
         animes = resultado;
         objetoPagina = animes.find(el => el.nombre == agregarbtn[0].className);
+
         creadorSerie(objetoPagina);
         creadorReview();;
     } catch (error) {console.error(error);}
