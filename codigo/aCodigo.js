@@ -1,5 +1,5 @@
 function creadorSerie(obj) {
-    $(".AnimePrincipal").css("backgroundImage",`url(../imagenes/${serieACrear[1][1]}.jpg)`);
+    $(".AnimePrincipal").css("backgroundImage", `url(../imagenes/${serieACrear[1][1]}.jpg)`);
 
     $(".ladoDerecho h1").html(obj.nombre);
 
@@ -19,22 +19,11 @@ function creadorSerie(obj) {
     $("#InformacionEstudio").html(infoAnime[2].innerHTML);
 }
 
-let serieACrear = JSON.parse(localStorage.getItem("SerieACrear"))
-let agregarbtn = $(".ladoIzquierdo span");
-agregarbtn[0].className = serieACrear[0];
-agregarbtn.click(agregarATuLista);
-
-elegirTarget(2);
-
-let objetoPagina = animes.find(el => el.nombre == agregarbtn[0].className);
-
-creadorSerie(objetoPagina);
-
 function creadorReview() {
     animeForm.on("submit", addReview);
 
     let reseña = (review.find(el => el[0] == objetoPagina.nombre));
-    reseña && escritorReview(reseña[0],reseña[1]);
+    reseña && escritorReview(reseña[0], reseña[1]);
 }
 
 function addReview(e) {
@@ -50,7 +39,7 @@ function addReview(e) {
     }
 }
 
-function escritorReview (nombre,review){
+function escritorReview(nombre, review) {
     tuReview.html(
         `<div class="borrarReview"> 
             <h2> Tu Review </h2> 
@@ -64,14 +53,35 @@ function escritorReview (nombre,review){
 }
 
 function eliminarReview(e) {
-    eliminar("reviews",3,e);
+    eliminar("reviews", 3, e);
 
     tuReview.html("");
     animeForm[0].className = "tuReview";
 }
 
+let serieACrear = JSON.parse(localStorage.getItem("SerieACrear"))
+let agregarbtn = $(".ladoIzquierdo span");
+agregarbtn[0].className = serieACrear[0];
+agregarbtn.click(agregarATuLista);
+
 let review = JSON.parse(localStorage.getItem("reviews")) || [];
 let animeForm = $(".tuReview");
 let tuReview = $(".serieReview");
 
-creadorReview();
+elegirTarget(2);
+
+let animes = [];
+let objetoPagina = 0;
+// llamo los datos.json y los guardo en una variable, despues inicio mi pagina
+const llamarDatos = async () => {
+    try {
+        let respuesta = await fetch('../Json/datos.json');
+        let resultado = await respuesta.json();
+        animes = resultado;
+        objetoPagina = animes.find(el => el.nombre == agregarbtn[0].className);
+        creadorSerie(objetoPagina);
+        creadorReview();;
+    } catch (error) {console.error(error);}
+};
+
+llamarDatos();

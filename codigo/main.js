@@ -1,7 +1,11 @@
+/*Hola, bienvenido a mi pagina, ListAnime. La Pagina cumple 2 funciones. 
+- Un Buscador de series para agregar a tu lista y ponerle una nota.
+- Y una pagina que se crea con la informacion de la serie que queres ver donde podes dejar una review.
+*/
 
 function buscaNombre(nombre) {
     let serie = animes.filter(obj => obj.nombre.toLowerCase().includes(nombre.toLowerCase()));
-    
+
     if (serie !== undefined) {
         return serie;
     }
@@ -26,7 +30,7 @@ function escritor(array, string) {
 
     for (let i = 0; i < array.length; i++) {
         acumulador +=
-        `<div class="anime ${array[i].nombre.replace(/\s+/g, '')}${string}">
+            `<div class="anime ${array[i].nombre.replace(/\s+/g, '')}${string}">
             <a class="linkAnime" href="./paginas/anime.html">
                 <div class="animeContenedor">
                     <div class="imagenAnime">${array[i].nombre}</div>
@@ -42,7 +46,7 @@ function escritor(array, string) {
 function escritorPagina(agregarClase) {
     $(".contenedorSeries").html(escritor(animes, agregarClase));
 
-   $(".tituloAnime").click(agregarATuLista);
+    $(".tituloAnime").click(agregarATuLista);
 
     let imagenSerie = $(".imagenAnime");
     imagenSerie.mousedown(linkEvento);
@@ -53,7 +57,7 @@ function escritorPagina(agregarClase) {
 }
 
 function linkEvento(e) {
-    localStorage.setItem("SerieACrear",JSON.stringify([e.target.innerHTML,e.target.className.split(" ")]));
+    localStorage.setItem("SerieACrear", JSON.stringify([e.target.innerHTML, e.target.className.split(" ")]));
 }
 
 $(".formulario").submit(validarFormulario);
@@ -76,5 +80,24 @@ function validarFormulario(e) {
 }
 
 elegirTarget(1);
+// llamo los datos.json y los guardo en una variable, despues inicio mi pagina
+let animes = [];
 
-escritorPagina("");
+const llamarDatos = async () => {
+    try {
+        let respuesta = await fetch('../Json/datos.json');
+        let resultado = await respuesta.json();
+        animes = resultado;
+        escritorPagina("");
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+llamarDatos();
+//Funcion para que la pantalla de carga no se repita
+setTimeout(() => {
+    if (sessionStorage.getItem("cargaPantalla")) {
+        $(".pantallaCarga")[0].className = "hideAnime";
+    } else {sessionStorage.setItem("cargaPantalla","true")}
+},0);

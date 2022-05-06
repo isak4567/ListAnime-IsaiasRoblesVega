@@ -1,4 +1,5 @@
 let numeroAgregar = 0;
+// elegirTarget solo existe para que agregar lista pueda ser usado de mas formas
 const elegirTarget = number => numeroAgregar = number;
 
 // Guarda cada serie en sessionStorage para ser usado en TuLista y muestra un cartel de agregado
@@ -18,7 +19,7 @@ function agregarATuLista(e) {
         localStorage.setItem("serieLista", JSON.stringify(seriesLista));
     }
 }
-
+// Eliminar filtra el dato del local storage y lo guarda de vuelta
 const eliminar = (itemStorage,num,e) => {  
     let array = JSON.parse(localStorage.getItem(itemStorage)) || [];
 
