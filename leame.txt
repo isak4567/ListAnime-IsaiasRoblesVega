@@ -4,6 +4,8 @@
 
  ###Actualizacion: Ya funciona.
 
- ###Actualizacion: Tuvo en un momento un problema que ya no aparece, 
+ ####Actualizacion: Tuvo en un momento un problema que ya no aparece, 
  no se que paso pero puede que todavia este ahi.
  
+ #####Actualizacion: fecht tiene un problema que no detecta bien el archivo json, 
+ los demas problemas estan resueltos.

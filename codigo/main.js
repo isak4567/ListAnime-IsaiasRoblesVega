@@ -80,20 +80,8 @@ function validarFormulario(e) {
 }
 
 elegirTarget(1);
-// llamo los datos.json y los guardo en una variable, despues inicio mi pagina
-let animes = [];
 
-const llamarDatos = async () => {
-    try {
-        let respuesta = await fetch('./listaAnime.json',{mode: 'no-cors'});
-        let resultado = await respuesta.json();
-        
-        animes = resultado;
-        escritorPagina("");
-    } catch (error) {
-        console.error(error);
-    }
-};
+let animes = [];
 
 llamarDatos();
 //Funcion para que la pantalla de carga no se repita
