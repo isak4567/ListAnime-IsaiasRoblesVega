@@ -1,7 +1,7 @@
 let numeroAgregar = 0;
-// elegirTarget solo existe para que agregar lista pueda ser usado de mas formas
+// elegirTarget solo existe poner condiciones en las funciones
 const elegirTarget = number => numeroAgregar = number;
-// llamo los datos.json y los guardo en una variable, despues inicio mi pagina
+// llamo los datos.json y los guardo en una variable, despues inicio la pagina
 const llamarDatos = async () => {
     try {
         let respuesta = numeroAgregar ==1? await fetch('./listaAnime.json', {mode: 'no-cors'}): await fetch('https://raw.githubusercontent.com/isak4567/ListAnime-IsaiasRoblesVega/master/listaAnime.json');
@@ -9,7 +9,7 @@ const llamarDatos = async () => {
         animes = resultado;
 
         if (numeroAgregar == 1) {
-            escritorPagina("");
+            creadorPagina("");
         } else {
             objetoPagina = animes.find(el => el.nombre == agregarbtn[0].className);
             creadorSerie(objetoPagina);

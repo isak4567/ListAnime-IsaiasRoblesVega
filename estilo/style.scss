@@ -14,9 +14,11 @@ $Azul2: rgb(43, 64, 255);
 $Violeta1: rgb(116, 0, 129);
 $Violeta2: rgb(178, 71, 255);
 $Rosa1: #ff28ed;
-$Font1: "Fantasy-One";
-$Font2: Arial, Helvetica, sans-serif;
 $backMultiColor: linear-gradient(225deg, #0b3cbf 0%, #ff4000 50%, #DED700 100%);
+$Font1: "Fantasy-One";
+$Font2: Arial,
+Helvetica,
+sans-serif;
 
 /* ############# Mixin ############# */
 @mixin gradienText ($color1, $color2) {
@@ -35,21 +37,25 @@ body {
     background: linear-gradient($Negro1 0%, $Negro2 20%, $Negro1 40%, $Negro2 60%, $Negro1 80%, $Negro2 100%);
     color: white;
 }
+
 /* ############# Encabezado ############# */
 .encabezado {
     width: 100%;
     padding: 30px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .logo {
     font-size: 3em;
-    @include gradienText($Azul1,$Azul2);
+    @include gradienText($Azul1, $Azul2);
+
     span {
         @include gradienText($Violeta1, $Violeta2);
     }
 }
+
 /* ############# Navegador ############# */
 .navegador {
     width: 30%;
@@ -65,11 +71,14 @@ body {
         li {
             font-size: 2em;
             width: 100%;
+
             span {
                 @include gradienText($Violeta1, $Violeta2);
             }
+
             a {
                 @include gradienText($Azul1, $Azul2);
+
                 &:hover {
                     color: $Rosa1;
                 }
@@ -77,6 +86,7 @@ body {
         }
     }
 }
+
 /* ############# Index Contenido Principal ############# */
 main {
     min-height: 80vh;
@@ -85,9 +95,11 @@ main {
 .InformacionPrincipal {
     text-align: center;
     font-family: $Font1;
+
     h2 {
         font-size: 2em;
     }
+
     p {
         font-size: 1.2em;
     }
@@ -99,6 +111,7 @@ main {
     width: 80%;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     font-family: $Font1;
 }
@@ -111,7 +124,8 @@ main {
 
     input,
     select {
-        width: 186px;
+        border-radius: 5px;
+        width: 200px;
         text-align: center;
         font-size: 0.8em;
     }
@@ -165,12 +179,14 @@ main {
     background-size: cover;
     background-position: bottom;
 }
+
 // imagenes de las series
 @for $i from 1 through 30 {
     .anime#{$i} {
         background-image: url(../imagenes/anime#{$i}.jpg);
     }
 }
+
 // Boton de agregar serie
 .tituloAnime {
     width: 100%;
@@ -199,17 +215,23 @@ main {
         color: orange;
     }
 }
+
 /* ############# Pie de Pagina ############# */
 .pieDePagina {
     width: 100%;
     padding: 30px;
     text-align: center;
+
+    p a {
+        color: $Azul2;
+    }
 }
 
 .tituloFooter {
     font-size: 2em;
     padding-bottom: 10px;
 }
+
 /* ############ PantallaCarga ############ */
 .pantallaCarga {
     background-color: black;
@@ -219,38 +241,24 @@ main {
     top: 0;
     left: 0;
     -webkit-animation: pantallaCarga 3s forwards;
-            animation: pantallaCarga 3s forwards;
-  }
-  
-  @-webkit-keyframes pantallaCarga {
+    animation: pantallaCarga 3s forwards;
+}
+
+@keyframes pantallaCarga {
     80% {
-      opacity: 1;
+        opacity: 1;
     }
+
     99% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
+        transform: translateY(0);
     }
+
     100% {
-      opacity: 0;
-      -webkit-transform: translateY(-200%);
-              transform: translateY(-200%);
+        opacity: 0;
+        transform: translateY(-200%);
     }
-  }
-  
-  @keyframes pantallaCarga {
-    80% {
-      opacity: 1;
-    }
-    99% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      -webkit-transform: translateY(-200%);
-              transform: translateY(-200%);
-    }
-  }
+}
+
 // ############# Cartel Agregado #############
 .cartelAgregarSerie {
     display: none;
@@ -297,6 +305,7 @@ main {
         transform: translateY(-50vh);
     }
 }
+
 /* ############# Tu Lista Tabla ############# */
 .h2Lista {
     font-size: 2em;
@@ -374,31 +383,37 @@ td {
         color: $Rosa1;
     }
 }
+
 // ########## Tu Lista BotonCancelar ##########
 .botonesCancelar {
     padding-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     span {
         font-size: 50px;
         color: $Azul2;
         cursor: pointer;
         padding-bottom: 2px;
+
         &:hover {
             color: $Rosa1;
         }
     }
+
     i {
         padding-bottom: 8px;
         color: rgb(255, 255, 255);
         font-size: 40px;
         cursor: pointer;
+
         &:hover {
             color: $Rosa1;
         }
     }
 }
+
 /* ############# Anime ############# */
 .AnimePrincipal {
     background-size: cover;
@@ -453,13 +468,16 @@ td {
         padding-bottom: 40px;
         font-family: $Font1;
     }
+
     h2 {
         font-size: 1.8em;
         padding-bottom: 20px;
     }
+
     h3 {
         font-size: 1.6em;
     }
+
     p {
         color: white;
         font-size: 1.2em;
@@ -469,8 +487,10 @@ td {
 
 .informacionSerie {
     display: flex;
+
     div {
         width: 100%;
+
         ul {
             display: flex;
             flex-wrap: wrap;
@@ -520,11 +540,112 @@ td {
 .borrarReview {
     display: flex;
     justify-content: space-between;
+
     i {
         font-size: 1.8em;
         padding-bottom: 20px;
+
         &:hover {
             color: $Violeta2;
+        }
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    /* ############# Encabezado ############# */
+    .navegador {width: 100%;}
+
+    .encabezado a {
+        width: 100%;
+        text-align: center;
+    }
+    /* ############# Index Seccion Formulario Busqueda ############# */
+    .formulario {
+        width: 95%;
+        input,select {width: 140px;}
+    }
+    /* ############# Tu Lista Tabla ############# */
+    .h2Lista {
+        font-size: 1.4em;
+        margin: 20px auto;
+    }
+
+    .tablaCabeza {font-size: 0.8em;}
+
+    .tablaCuerpo {font-size: 0.6em;}
+
+    .botonesCancelar {
+        span {
+            font-size: 30px;
+            padding-bottom: 12px;
+        }
+        i {
+            font-size: 20px;
+            padding-bottom: 13px;
+        }
+    }
+    /* ############# Anime ############# */
+    .AnimeInformacionPrincipal {
+        padding: 2% 1%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ladoIzquierdo {
+        width: 80%;
+        height: 400px;
+    }
+
+    .ladoDerecho {
+        width: 80%;
+        .informacionSerie {
+            flex-wrap: wrap;
+            div {
+                width: 100%;
+                ul li {font-size: 1em;}
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 960px) {
+    /* ############# Tu Lista Tabla ############# */
+    .h2Lista {
+        font-size: 1.6em;
+        margin: 30px auto;
+    }
+
+    .tablaCabeza {font-size: 1.2em;}
+
+    .tablaCuerpo {font-size: 1em;}
+
+    .botonesCancelar {
+        span {
+            font-size: 40px;
+            padding-bottom: 6px;
+        }
+
+        i {
+            font-size: 30px;
+            padding-bottom: 10px;
+        }
+    }
+    /* ############# Anime ############# */
+    .AnimeInformacionPrincipal {padding: 2% 2%;}
+
+    .ladoIzquierdo {
+        width: 70%;
+        height: 500px;
+    }
+
+    .ladoDerecho {
+        width: 70%;
+        .informacionSerie {
+            flex-wrap: wrap;
+            div {
+                width: 100%;
+                ul li {font-size: 1.1em;}
+            }
         }
     }
 }

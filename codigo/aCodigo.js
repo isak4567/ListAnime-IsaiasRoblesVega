@@ -1,3 +1,9 @@
+/*Codigo de pagina Anime. A traves de un dato la pagina se crea personalmente
+ con la informacion del obj en cueston y saca los otros datos de su html,
+ ya que esos datos solo sirven en esta pagina. Despues guarda una review con el 
+ nombre del dato para ser puesta cuando entres de vuelta*/
+
+// Mete los datos del obj en html
 function creadorSerie(obj) {
     $(".AnimePrincipal").css("backgroundImage", `url(../imagenes/${serieACrear[1][1]}.jpg)`);
 
@@ -18,14 +24,14 @@ function creadorSerie(obj) {
     $("#InformacionCaps").html(infoAnime[1].innerHTML);
     $("#InformacionEstudio").html(infoAnime[2].innerHTML);
 }
-
+// Mete el evento para dejar una review y si hay, la remplaza en html
 function creadorReview() {
     animeForm.on("submit", addReview);
 
     let reseña = (review.find(el => el[0] == objetoPagina.nombre));
     reseña && escritorReview(reseña[0], reseña[1]);
 }
-
+// Evento submit que manda el dato de la review a guardarse y despues lo pone en html
 function addReview(e) {
     e.preventDefault();
 
@@ -38,7 +44,7 @@ function addReview(e) {
         escritorReview(objetoPagina.nombre, e.target.children[1].value);
     }
 }
-
+// Escribe los datos de la review en html y oculta el lugar donde poner review
 function escritorReview(nombre, review) {
     tuReview.html(
         `<div class="borrarReview"> 
@@ -51,7 +57,7 @@ function escritorReview(nombre, review) {
 
     animeForm.addClass("hideAnime");
 }
-
+// Elimina la review y el ocultamiento de donde escribirla
 function eliminarReview(e) {
     eliminar("reviews", 3, e);
 

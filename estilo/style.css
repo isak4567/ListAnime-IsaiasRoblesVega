@@ -28,6 +28,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -119,6 +121,8 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   font-family: "Fantasy-One";
@@ -138,7 +142,8 @@ main {
 
 .form-group input,
 .form-group select {
-  width: 186px;
+  border-radius: 5px;
+  width: 200px;
   text-align: center;
   font-size: 0.8em;
 }
@@ -354,6 +359,10 @@ main {
   text-align: center;
 }
 
+.pieDePagina p a {
+  color: #2b40ff;
+}
+
 .tituloFooter {
   font-size: 2em;
   padding-bottom: 10px;
@@ -377,12 +386,12 @@ main {
   }
   99% {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
   100% {
     opacity: 0;
     -webkit-transform: translateY(-200%);
-    transform: translateY(-200%);
+            transform: translateY(-200%);
   }
 }
 
@@ -392,12 +401,12 @@ main {
   }
   99% {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
   100% {
     opacity: 0;
     -webkit-transform: translateY(-200%);
-    transform: translateY(-200%);
+            transform: translateY(-200%);
   }
 }
 
@@ -760,5 +769,111 @@ td {
 
 .borrarReview i:hover {
   color: #b247ff;
+}
+
+@media only screen and (max-width: 560px) {
+  /* ############# Encabezado ############# */
+  .navegador {
+    width: 100%;
+  }
+  .encabezado a {
+    width: 100%;
+    text-align: center;
+  }
+  /* ############# Index Seccion Formulario Busqueda ############# */
+  .formulario {
+    width: 95%;
+  }
+  .formulario input, .formulario select {
+    width: 140px;
+  }
+  /* ############# Tu Lista Tabla ############# */
+  .h2Lista {
+    font-size: 1.4em;
+    margin: 20px auto;
+  }
+  .tablaCabeza {
+    font-size: 0.8em;
+  }
+  .tablaCuerpo {
+    font-size: 0.6em;
+  }
+  .botonesCancelar span {
+    font-size: 30px;
+    padding-bottom: 12px;
+  }
+  .botonesCancelar i {
+    font-size: 20px;
+    padding-bottom: 13px;
+  }
+  /* ############# Anime ############# */
+  .AnimeInformacionPrincipal {
+    padding: 2% 1%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ladoIzquierdo {
+    width: 80%;
+    height: 400px;
+  }
+  .ladoDerecho {
+    width: 80%;
+  }
+  .ladoDerecho .informacionSerie {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .ladoDerecho .informacionSerie div {
+    width: 100%;
+  }
+  .ladoDerecho .informacionSerie div ul li {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 960px) {
+  /* ############# Tu Lista Tabla ############# */
+  .h2Lista {
+    font-size: 1.6em;
+    margin: 30px auto;
+  }
+  .tablaCabeza {
+    font-size: 1.2em;
+  }
+  .tablaCuerpo {
+    font-size: 1em;
+  }
+  .botonesCancelar span {
+    font-size: 40px;
+    padding-bottom: 6px;
+  }
+  .botonesCancelar i {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+  /* ############# Anime ############# */
+  .AnimeInformacionPrincipal {
+    padding: 2% 2%;
+  }
+  .ladoIzquierdo {
+    width: 70%;
+    height: 500px;
+  }
+  .ladoDerecho {
+    width: 70%;
+  }
+  .ladoDerecho .informacionSerie {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .ladoDerecho .informacionSerie div {
+    width: 100%;
+  }
+  .ladoDerecho .informacionSerie div ul li {
+    font-size: 1.1em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
