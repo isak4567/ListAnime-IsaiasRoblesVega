@@ -1,11 +1,8 @@
- Si se abre en live server de Visual Studio Code
- la Lista de TuLista no se va mostrar por un dato que mete
- live server al ssesionStorage destruyendo la funcion.
 
- ###Actualizacion: Ya funciona.
+ ## Puse unos link a videos de chiste en @tutrabajoestudios, son 3 diferentes.
+ Esta avisado del chiste al leer este mensaje.
 
- ####Actualizacion: Tuvo en un momento un problema que ya no aparece, 
- no se que paso pero puede que todavia este ahi.
+ # Si se abre el trabajo sin live server o online el siga las instrucciones 
+  puestas del codigo.
  
- #####Actualizacion: fecht tiene un problema que no detecta bien el archivo json, 
- los demas problemas estan resueltos.
+ 

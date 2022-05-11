@@ -4,6 +4,8 @@ const elegirTarget = number => numeroAgregar = number;
 // llamo los datos.json y los guardo en una variable, despues inicio la pagina
 const llamarDatos = async () => {
     try {
+        /*Si quieres que funcione el fecht sin live server o online, remplazar la linea de codigo de abajo con esta:
+        let respuesta = await fetch('https://raw.githubusercontent.com/isak4567/ListAnime-IsaiasRoblesVega/master/listaAnime.json');*/
         let respuesta = numeroAgregar ==1? await fetch('./listaAnime.json', {mode: 'no-cors'}): await fetch('https://raw.githubusercontent.com/isak4567/ListAnime-IsaiasRoblesVega/master/listaAnime.json');
         let resultado = await respuesta.json();
         animes = resultado;
