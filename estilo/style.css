@@ -206,120 +206,270 @@ main {
   background-image: url(../imagenes/anime1.jpg);
 }
 
+.anime1:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime1.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime1.jpg);
+}
+
 .anime2 {
   background-image: url(../imagenes/anime2.jpg);
+}
+
+.anime2:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime2.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime2.jpg);
 }
 
 .anime3 {
   background-image: url(../imagenes/anime3.jpg);
 }
 
+.anime3:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime3.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime3.jpg);
+}
+
 .anime4 {
   background-image: url(../imagenes/anime4.jpg);
+}
+
+.anime4:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime4.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime4.jpg);
 }
 
 .anime5 {
   background-image: url(../imagenes/anime5.jpg);
 }
 
+.anime5:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime5.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime5.jpg);
+}
+
 .anime6 {
   background-image: url(../imagenes/anime6.jpg);
+}
+
+.anime6:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime6.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime6.jpg);
 }
 
 .anime7 {
   background-image: url(../imagenes/anime7.jpg);
 }
 
+.anime7:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime7.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime7.jpg);
+}
+
 .anime8 {
   background-image: url(../imagenes/anime8.jpg);
+}
+
+.anime8:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime8.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime8.jpg);
 }
 
 .anime9 {
   background-image: url(../imagenes/anime9.jpg);
 }
 
+.anime9:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime9.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime9.jpg);
+}
+
 .anime10 {
   background-image: url(../imagenes/anime10.jpg);
+}
+
+.anime10:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime10.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime10.jpg);
 }
 
 .anime11 {
   background-image: url(../imagenes/anime11.jpg);
 }
 
+.anime11:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime11.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime11.jpg);
+}
+
 .anime12 {
   background-image: url(../imagenes/anime12.jpg);
+}
+
+.anime12:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime12.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime12.jpg);
 }
 
 .anime13 {
   background-image: url(../imagenes/anime13.jpg);
 }
 
+.anime13:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime13.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime13.jpg);
+}
+
 .anime14 {
   background-image: url(../imagenes/anime14.jpg);
+}
+
+.anime14:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime14.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime14.jpg);
 }
 
 .anime15 {
   background-image: url(../imagenes/anime15.jpg);
 }
 
+.anime15:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime15.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime15.jpg);
+}
+
 .anime16 {
   background-image: url(../imagenes/anime16.jpg);
+}
+
+.anime16:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime16.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime16.jpg);
 }
 
 .anime17 {
   background-image: url(../imagenes/anime17.jpg);
 }
 
+.anime17:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime17.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime17.jpg);
+}
+
 .anime18 {
   background-image: url(../imagenes/anime18.jpg);
+}
+
+.anime18:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime18.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime18.jpg);
 }
 
 .anime19 {
   background-image: url(../imagenes/anime19.jpg);
 }
 
+.anime19:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime19.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime19.jpg);
+}
+
 .anime20 {
   background-image: url(../imagenes/anime20.jpg);
+}
+
+.anime20:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime20.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime20.jpg);
 }
 
 .anime21 {
   background-image: url(../imagenes/anime21.jpg);
 }
 
+.anime21:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime21.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime21.jpg);
+}
+
 .anime22 {
   background-image: url(../imagenes/anime22.jpg);
+}
+
+.anime22:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime22.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime22.jpg);
 }
 
 .anime23 {
   background-image: url(../imagenes/anime23.jpg);
 }
 
+.anime23:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime23.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime23.jpg);
+}
+
 .anime24 {
   background-image: url(../imagenes/anime24.jpg);
+}
+
+.anime24:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime24.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime24.jpg);
 }
 
 .anime25 {
   background-image: url(../imagenes/anime25.jpg);
 }
 
+.anime25:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime25.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime25.jpg);
+}
+
 .anime26 {
   background-image: url(../imagenes/anime26.jpg);
+}
+
+.anime26:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime26.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime26.jpg);
 }
 
 .anime27 {
   background-image: url(../imagenes/anime27.jpg);
 }
 
+.anime27:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime27.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime27.jpg);
+}
+
 .anime28 {
   background-image: url(../imagenes/anime28.jpg);
+}
+
+.anime28:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime28.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime28.jpg);
 }
 
 .anime29 {
   background-image: url(../imagenes/anime29.jpg);
 }
 
+.anime29:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime29.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime29.jpg);
+}
+
 .anime30 {
   background-image: url(../imagenes/anime30.jpg);
+}
+
+.anime30:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.641)), to(rgba(40, 40, 40, 0.513))), url(../imagenes/anime30.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)), url(../imagenes/anime30.jpg);
 }
 
 .tituloAnime, .ladoIzquierdo span, .tuReview input {

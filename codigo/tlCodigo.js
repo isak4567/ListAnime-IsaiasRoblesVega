@@ -51,24 +51,29 @@ function creadorLista() {
     $("i").click(borrarDeLista);
     //Evento de botonBorrarTodo SwalFire, despues de borrar crea de vuelta la pagina
     $(".botonesCancelar span").click(() => {
-        Swal.fire({
-            title: '¿Borrar todas las series de la lista?',
-            color: 'orangered',
-            background: 'black',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: 'blue',
-            cancelButtonColor: 'orangered',
-            confirmButtonText: 'Borrar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                localStorage.removeItem("serieLista");
-                localStorage.removeItem("notaLista");
-                creadorLista();
-                notaEstrellas();
-                Swal.fire({title:'La lista fue borrada',color: 'orangered',background:'black',confirmButtonColor: 'blue'});
-            }
-        })
+        if (localStorage.getItem("serieLista") !== null) {
+            Swal.fire({
+                title: '¿Borrar todas las series de la lista?',
+                color: 'orangered',
+                background: 'black',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'blue',
+                cancelButtonColor: 'orangered',
+                confirmButtonText: 'Borrar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem("serieLista");
+                    localStorage.removeItem("notaLista");
+                    creadorLista();
+                    notaEstrellas();
+                    Swal.fire({title:'La lista fue borrada',color: 'orangered',background:'black',confirmButtonColor: 'blue'});
+                }
+            })
+        } else {
+            Swal.fire({title:'No hay nada para borrar de tu lista.',color: 'orangered',background:'black',confirmButtonColor: 'blue'});
+        }
+        
     });
 
     if (localStorage.getItem("notaLista") !== null) {

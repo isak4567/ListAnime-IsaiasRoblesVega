@@ -178,12 +178,14 @@ main {
     border-radius: 15px;
     background-size: cover;
     background-position: bottom;
+    
 }
 
 // imagenes de las series
 @for $i from 1 through 30 {
     .anime#{$i} {
         background-image: url(../imagenes/anime#{$i}.jpg);
+        &:hover {background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.641), rgba(40, 40, 40, 0.513)),url(../imagenes/anime#{$i}.jpg);}
     }
 }
 
