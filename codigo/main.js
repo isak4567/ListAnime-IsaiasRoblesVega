@@ -88,3 +88,17 @@ llamarDatos();
 setTimeout(() => {
     (sessionStorage.getItem("cargaPantalla"))? $(".pantallaCarga")[0].className = "hideAnime" : sessionStorage.setItem("cargaPantalla","true")
 },0);
+
+$(".botonKawai").click((e)=>{
+    $("body")[0].classList.toggle("pinky");
+    if($("body")[0].className == "pinky"){
+        e.target.innerHTML ="Kawaii On";
+        
+        document.getElementById("audio").play();
+    } else {e.target.innerHTML= "Kawaii Off";}
+    e.target.classList.toggle("black"); 
+    $(".pinkImg").toggle();
+    $(".pinkImg")[0].classList.toggle("pantallaCarga");
+    $(".pinkImg").css("backgroundColor","transparent");
+    $(".pinkImg").css("position","fixed");
+});

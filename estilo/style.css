@@ -100,6 +100,36 @@ main {
   min-height: 80vh;
 }
 
+.botonKawai {
+  background: #ff28ed;
+  position: fixed;
+  text-align: center;
+  opacity: 0.3;
+  padding: 8px 2px;
+  width: 52px;
+  right: 20px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 70px;
+  cursor: pointer;
+}
+
+.botonKawai:hover {
+  opacity: 1;
+}
+
+.pinkImg {
+  background-image: url(../imagenes/kawaiiImage.png);
+}
+
+.black {
+  background: black;
+}
+
+.pinky {
+  background: #ff28ed;
+}
+
 .InformacionPrincipal {
   text-align: center;
   font-family: "Fantasy-One";
@@ -140,8 +170,7 @@ main {
   font-size: 1.5em;
 }
 
-.form-group input,
-.form-group select {
+.form-group input, .form-group select {
   border-radius: 5px;
   width: 200px;
   text-align: center;
@@ -658,8 +687,7 @@ main {
   border-collapse: collapse;
 }
 
-th,
-td {
+th, td {
   padding: 10px;
 }
 
@@ -931,6 +959,10 @@ td {
     text-align: center;
   }
   /* ############# Index Seccion Formulario Busqueda ############# */
+  .botonKawai {
+    font-size: 0.8em;
+    width: 40px;
+  }
   .formulario {
     width: 95%;
   }

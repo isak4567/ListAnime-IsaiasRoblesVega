@@ -16,9 +16,7 @@ $Violeta2: rgb(178, 71, 255);
 $Rosa1: #ff28ed;
 $backMultiColor: linear-gradient(225deg, #0b3cbf 0%, #ff4000 50%, #DED700 100%);
 $Font1: "Fantasy-One";
-$Font2: Arial,
-Helvetica,
-sans-serif;
+$Font2: Arial,Helvetica,sans-serif;
 
 /* ############# Mixin ############# */
 @mixin gradienText ($color1, $color2) {
@@ -71,38 +69,41 @@ body {
         li {
             font-size: 2em;
             width: 100%;
-
-            span {
-                @include gradienText($Violeta1, $Violeta2);
-            }
-
+            span {@include gradienText($Violeta1, $Violeta2);}
             a {
                 @include gradienText($Azul1, $Azul2);
-
-                &:hover {
-                    color: $Rosa1;
-                }
+                &:hover {color: $Rosa1;}
             }
         }
     }
 }
 
 /* ############# Index Contenido Principal ############# */
-main {
-    min-height: 80vh;
+main {min-height: 80vh;}
+
+.botonKawai {
+    background: #ff28ed;
+    position: fixed;
+    text-align: center;
+    opacity: 0.3;
+    padding: 8px 2px;
+    width: 52px;
+    right: 20px;
+    transition: all 0.3s;
+    border-radius: 70px;
+    cursor: pointer;
+    &:hover {opacity: 1;}
 }
+
+.pinkImg {background-image: url(../imagenes/kawaiiImage.png);}
+.black {background: black;}
+.pinky {background: #ff28ed;}
 
 .InformacionPrincipal {
     text-align: center;
     font-family: $Font1;
-
-    h2 {
-        font-size: 2em;
-    }
-
-    p {
-        font-size: 1.2em;
-    }
+    h2 {font-size: 2em;}
+    p {font-size: 1.2em;}
 }
 
 /* ############# Index Seccion Formulario Busqueda ############# */
@@ -122,8 +123,7 @@ main {
     text-align: center;
     font-size: 1.5em;
 
-    input,
-    select {
+    input,select {
         border-radius: 5px;
         width: 200px;
         text-align: center;
@@ -149,13 +149,8 @@ main {
     border-radius: 15px;
 }
 
-.hideAnime {
-    display: none !important;
-}
-
-.displayAnime {
-    display: initial !important;
-}
+.hideAnime {display: none !important;}
+.displayAnime {display: initial !important;}
 
 .linkAnime {
     width: 100%;
@@ -223,10 +218,7 @@ main {
     width: 100%;
     padding: 30px;
     text-align: center;
-
-    p a {
-        color: $Azul2;
-    }
+    p a {color: $Azul2;}
 }
 
 .tituloFooter {
@@ -247,14 +239,8 @@ main {
 }
 
 @keyframes pantallaCarga {
-    80% {
-        opacity: 1;
-    }
-
-    99% {
-        transform: translateY(0);
-    }
-
+    80% {opacity: 1;}
+    99% {transform: translateY(0);}
     100% {
         opacity: 0;
         transform: translateY(-200%);
@@ -292,17 +278,14 @@ main {
         opacity: 0;
         transform: translateY(-50vh);
     }
-
     30% {
         opacity: 1;
         transform: translateY(0);
     }
-
     70% {
         opacity: 1;
         transform: translateY(0);
     }
-
     100% {
         transform: translateY(-50vh);
     }
@@ -326,10 +309,7 @@ main {
     border-collapse: collapse;
 }
 
-th,
-td {
-    padding: 10px;
-}
+th,td {padding: 10px;}
 
 .tablaCabeza {
     font-family: $Font1;
@@ -345,11 +325,7 @@ td {
 
 .fila {
     border-top: 2px groove blue;
-
-    &:nth-child(even) {
-        color: rgb(223, 215, 171);
-    }
-
+    &:nth-child(even) {color: rgb(223, 215, 171);}
     &:hover {
         color: $Rosa1;
         box-shadow: 0px 0px 2px 2px $Rosa1;
@@ -362,9 +338,7 @@ td {
     justify-content: center;
     transform: rotateY(180deg);
 
-    input {
-        display: none;
-    }
+    input {display: none;}
 
     label {
         cursor: pointer;
@@ -373,17 +347,11 @@ td {
         color: $Negro2;
     }
 
-    input:checked~label span {
-        color: $Azul2;
-    }
+    input:checked~label span {color: $Azul2;}
 
-    &:hover label span {
-        color: $Violeta2;
-    }
+    &:hover label span {color: $Violeta2;}
 
-    input:hover~label span {
-        color: $Rosa1;
-    }
+    input:hover~label span {color: $Rosa1;}
 }
 
 // ########## Tu Lista BotonCancelar ##########
@@ -398,10 +366,7 @@ td {
         color: $Azul2;
         cursor: pointer;
         padding-bottom: 2px;
-
-        &:hover {
-            color: $Rosa1;
-        }
+        &:hover {color: $Rosa1;}
     }
 
     i {
@@ -409,10 +374,7 @@ td {
         color: rgb(255, 255, 255);
         font-size: 40px;
         cursor: pointer;
-
-        &:hover {
-            color: $Rosa1;
-        }
+        &:hover {color: $Rosa1;}
     }
 }
 
@@ -476,9 +438,7 @@ td {
         padding-bottom: 20px;
     }
 
-    h3 {
-        font-size: 1.6em;
-    }
+    h3 {font-size: 1.6em;}
 
     p {
         color: white;
@@ -546,10 +506,7 @@ td {
     i {
         font-size: 1.8em;
         padding-bottom: 20px;
-
-        &:hover {
-            color: $Violeta2;
-        }
+        &:hover {color: $Violeta2;}
     }
 }
 
@@ -562,6 +519,10 @@ td {
         text-align: center;
     }
     /* ############# Index Seccion Formulario Busqueda ############# */
+    .botonKawai {
+        font-size: 0.8em;
+        width: 40px;
+    }
     .formulario {
         width: 95%;
         input,select {width: 140px;}
